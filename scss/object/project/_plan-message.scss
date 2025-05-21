@@ -1,0 +1,374 @@
+@use '../../foundation/variable' as *;
+@use '../../foundation/mixin' as *;
+
+.price {
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-content: center;
+    padding-top: 5.7rem;
+    padding-bottom: 3.85rem;
+    text-align: center;
+    @include sp {
+        padding-top: 3.5rem;
+        padding-bottom: 3rem;
+    }
+    &__title_a {
+        margin-bottom: 2.5rem;
+        @include sp {
+            margin-bottom: 3rem;
+        }
+        h3 {
+            font-size: 2.5rem;
+            line-height: calc(60 / 25);
+            font-weight: 700;
+            color: #000000;
+            justify-content: center;
+            // padding-bottom: 3rem;
+            display: grid;
+            place-content: center;
+            margin-bottom: 0rem;
+            @include sp {
+                margin-bottom: 3.3rem;
+
+            }
+        }
+    }
+    &__title_b {
+        margin-bottom: 3.5rem;
+        @include sp {
+            margin-bottom: 0.8rem;
+        }
+        h3 {
+            font-size: 2.5rem;
+            line-height: calc(60 / 25);
+            font-weight: 700;
+            color: #000000;
+            justify-content: center;
+            // padding-bottom: 3rem;
+            display: grid;
+            place-content: center;
+            @include sp {
+                margin-bottom: -1rem;
+
+            }
+        }
+    }
+    .container {
+        display: flex;
+        place-content: center;
+        column-gap: 7.9rem;
+        @include sp {
+            flex-direction:column;
+            column-gap:0;
+            row-gap: 5.8rem
+        }
+    }
+    .text {
+        width: 100%;
+        height: auto;
+        // padding: 0 1.6rem;
+        text-align: left;
+        @include sp {
+            padding: 0rem;
+        }
+        p {
+            font-size: 1.8rem;
+            line-height: calc(30 / 18);
+            margin-top:4.8rem;
+            @include sp {
+                font-size: 1.6rem;
+                line-height: calc(30 / 16);
+                margin-top:4.4rem;
+            }
+            
+        }
+    }
+}
+ 
+.monthly-fee {
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-content: center;
+    padding-top: 1rem;
+    margin-bottom: 16rem;
+    text-align: center;
+    @include sp {
+        padding-top: 0rem;
+        margin-bottom: 12.4rem; 
+        margin-left: 0.2rem;
+    }
+    &__title {
+        margin-bottom: 4rem;
+        h3 {
+            font-size: 2.5rem;
+            line-height: calc(37.5 / 25);
+            font-weight: 700;
+            color: #000000;
+            justify-content: center;
+            display: grid;
+            place-content: center;
+        }
+    }
+    .price__title {
+        margin-bottom: 3.7rem;
+        @include sp {
+            margin-bottom: 1.1rem;
+        }
+    }
+    table {
+        border-collapse: collapse;
+        
+        @include sp {
+            width: 100%;
+            min-width: 67rem;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+        td {
+            padding: 0.3rem;
+            width: 22rem;
+            height: 8.5rem;
+            // border: 1px solid #000000;
+            border-collapse: collapse;
+            font-size: 1.7rem;
+            @include sp {
+                width: 16.75rem !important;
+                padding-right: 0;
+                padding-top: 0.5rem;
+                padding-left: 1.6rem;
+                margin-left: 0.4rem;
+            }
+            span {
+                display: inline-block;
+                width: 1.5rem;
+                height: 1.5rem;
+                background: #000000;
+                border-radius: 50%;
+            }
+            span.red {
+                display: inline-block;
+                width: 1.5rem;
+                height: 1.5rem;
+                background: $color-red;
+                border-radius: 50%;
+            }
+            &:empty { 
+                width: 3rem;
+            }
+            
+            &:first-child {
+                text-align: left !important;
+                padding-left: 2rem;
+                @include sp {
+                    padding-left: 1rem;
+                }
+            }
+            &.blank {
+                position:relative;
+                span.blank {
+                    display: inline-block;
+                    width: 3rem;
+                    height: 0.1rem;
+                    border-bottom: 1px solid #707070;
+                    position:absolute;
+                    top: 48%;
+                    left:55%;
+                    transform: translate(-50%, -50%);
+                    // @include sp {
+                    //     padding-bottom: 1rem;
+                    //     padding-top:0;
+                    // }
+                }
+            }
+        }
+        .large-text {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        .first {
+            padding: 0.3rem;
+            background: #FFFFFF;
+            width: 22rem;
+            height: 3.7rem;
+            @include sp {
+                width: 16.75rem;
+            }
+        }
+        th {
+            padding: 0.3rem;
+            background: #FFFFFF;
+            width: 22rem;
+            height: 5rem;
+            font-size: 2rem;
+            font-weight: 700;
+            @include sp {
+                width: 16.75rem;
+            }
+            &:first-of-type {
+                height: 3rem;
+                border-bottom:1px solid #000000;
+                border-right: none;
+            }
+            &-first {
+                border-right: none;
+                @include sp {
+                    width: 16.75rem;
+                }
+            }
+        }
+        
+        .even {
+            background: #FFFFFF;
+        }
+        .odd {
+            background: gray;
+        }
+        .back-a {
+            background: $color-red;
+            color: #FFF;
+            text-align: center;
+            span {
+                font-size: 1.7rem;
+            }
+            
+        }
+        .back-b {
+            background: #000000;
+            color:#FFFFFF;
+            font-size: 2rem;
+            line-height: calc(25 / 20);
+            font-weight: 700;
+            text-align: center;
+            
+        }
+        
+        .tr-first th {
+            height: 3.3rem;
+            @include sp {
+                height: 0;
+                padding: 0;
+            }
+        }
+        .tr-2th {
+            padding: 0.3rem;
+            background: #FFFFFF;
+            width: 22rem;
+            height: 5rem;
+            @include sp {
+                width: 16.75rem;
+                height: 6.6rem;
+            }
+            
+        }
+        th,td {
+            border-right: 1px solid #000000;
+            vertical-align: middle;
+        }
+        th:last-child,
+        td:last-child {
+            border-right: none;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(80,80,80,0.149);
+        }
+        tr:last-child {
+            border-bottom: 1px solid #000000;
+        }
+        tr td:first-child { //1列目のみフォントサイズ指定
+            @include sp {
+                font-size: 1.6rem;
+            }
+        }
+        .red {
+            color: $color-red;
+        }
+        span {
+            .red {
+                color:$color-main;
+            }
+        }
+    }
+    .table-container {
+        @include sp {
+            padding-top: 2.8rem;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* iOSのスムーズスクロール対応 */
+        }
+    }
+    
+    .text {
+        margin-top: 2.85rem;
+        p {
+            font-size: 1.7rem;
+            line-height: calc(25 / 17);
+            color: #000000;
+            text-align: left;
+            @include sp {
+                margin-bottom: 0rem;
+                font-size: 1.6rem;
+                line-height: calc(30 / 16);
+            }
+        }
+    }
+    
+}
+
+//スクロールバー
+.table-container {
+    @include sp {
+        overflow-x: auto;
+        display: block;
+        margin-bottom: -1rem;
+    }
+    
+}
+
+.table-container table th,
+.table-container table td {
+    @include sp {
+        white-space: nowrap;
+    }
+    
+}
+
+/* スクロールバー全体を対象にする */
+.table-container::-webkit-scrollbar {
+    @include sp {
+        width: 100%; /* スクロールバーの幅 */
+        height: 2.5rem; /* スクロールバーの高さ */
+        margin-bottom: 1.7rem;
+    }
+   
+}
+
+/* スクロールバーの背景部分をカスタマイズ */
+.table-container::-webkit-scrollbar-track {
+    @include sp {
+        background: rgba(80, 80, 80, 0.251); /* スクロールバーの背景色 */
+       
+    }
+    
+}
+
+/* スクロールバーの操作部分をカスタマイズ */
+.table-container::-webkit-scrollbar-thumb {
+    @include sp {
+        width: 10rem;
+        height: 2.3rem; 
+        background: rgba(80, 80, 80, 0.251);
+    }
+    
+}
+
+/* スクロールバーの操作部分にホバーした時のスタイル */
+.table-container::-webkit-scrollbar-thumb:hover {
+    @include sp {
+        background: #555; /* ホバー時のスクロールバーの操作部分の背景色 */
+    }
+    
+}
+
+

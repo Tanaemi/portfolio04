@@ -1,0 +1,297 @@
+@use '../../foundation/variable' as *;
+@use '../../foundation/mixin' as *;
+
+.result_details__container {
+    padding-top:7rem;
+    padding-bottom: 5.8rem;
+    @include sp {
+        padding-top:5rem;
+        padding-bottom: 10.8rem;
+    }
+    .inner {
+        padding: 0 2rem;
+    }
+    .result_details__item {
+        display: flex;
+        margin:0 auto;
+        margin-bottom: 5rem;
+        @include sp {
+            margin-bottom: 1rem;
+        }
+        &__items {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 4rem;
+            margin-bottom: 0.6rem;
+        }
+        &__image {
+            width: 100%;
+            height: auto;
+            position: relative;
+            top: 0;
+            left: 0;
+            
+            img {
+                width: 88rem;
+                aspect-ratio: 880 / 400; /* 比率を維持 */
+                object-fit: cover;
+                overflow: hidden; /* はみ出た部分をカット */
+                position: relative;
+                top: 0;
+                left: 0;
+                // overflow: visible;
+                margin-bottom: 5rem;
+                @include sp {
+                    width: 100%;
+                    aspect-ratio: 335 / 236;
+                    margin-bottom: 3rem;
+                }
+            }
+            
+        }
+        &__logo {
+            width: 10rem;
+            height: 3rem;
+            display:flex;
+            position:absolute;
+            top: 0;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: calc(25 / 15);
+            font-weight: 700;
+            color: $color-main;
+            background: $color-red;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            @include sp {
+                width: 8rem;
+            }
+        }
+        &__logo_top {
+            width: 10rem;
+            height: 3rem;
+            display:flex;
+            position:absolute;
+            top: 0;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: calc(25 / 15);
+            font-weight: 700;
+            color: $color-main;
+            background: $color-red;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            @include sp {
+                width: 10rem;
+            }
+        }
+        &__text-title {
+            font-size: 2.5rem;
+            line-height: calc(40 / 25);
+            margin-bottom: 1.5rem;
+            color: #000000;
+            @include sp {
+                font-size: 2rem;
+                line-height: calc(30 / 20);
+                font-weight: 700;
+                margin-bottom: 0.6rem;
+            }
+        }
+        &__text-date {
+            font-size: 1.7rem;
+            line-height: calc(30 / 17);
+        }
+        .result_details_list__item__text {
+            padding-bottom: 0.6rem;
+        }
+    }
+    .table-area {
+        width: 100%;
+        display: flex;
+        column-gap: 4rem;
+        margin-bottom: 6rem;
+        @include sp {
+            flex-direction: column;
+            margin-bottom: 4rem;
+        }
+        &__left {
+            width: 47.6%;
+            // background-color: red;
+            @include sp {
+                width:100%;
+                margin-bottom: 2.8rem;
+            }
+            table {
+                border: 0.5px solid #707070;
+                border-collapse: collapse;
+                td {
+                    // padding: 3px;
+                    width:14rem;
+                    height: 3.8rem;
+                    border: 0.5px solid #707070;
+                    border-collapse: collapse;
+                    font-size: 1.8rem;
+                    line-height: calc(30 / 18);
+                    
+                    
+                    &:first-child {
+                        width: 14rem;
+                        padding: 0.8rem 2rem 0rem;
+                        background: #E5E5E5;
+                        @include sp {
+                            padding: 0.7rem 1rem 0rem;
+                        }
+                    }
+                    &:nth-child(2) {
+                        width: 26rem;
+                        padding: 0.8rem 2rem 0rem;
+                        @include sp {
+                            flex:1; 
+                            padding: 0.8rem 1rem 0rem;
+                        }
+                
+                    }
+                }
+            }
+        }
+        &__right {
+            width: 52.4%;
+            @include sp {
+                width:100%;
+            }
+            p {
+                font-size: 1.8rem;
+                line-height: calc(30 / 18);
+                color: #000000;
+            }
+        } 
+    
+    }
+    .container-result-details {
+        width:100%;
+        display: flex;
+        column-gap: 19.9rem;
+        margin-bottom: 10rem;
+        @include sp {
+            column-gap: 6%;
+            margin-bottom: 6.1rem;
+        }
+        .blog-detail__middle {
+            display: flex;
+            column-gap: 1.7rem;
+            @include sp {
+                flex-direction: column;
+            }
+            img {
+                width: 9.8rem;
+                height: 6.8rem;
+                aspect-ratio: 98/68;
+                @include sp {
+                    display:none;
+                }
+            }
+            p {
+                flex:1;;
+                height: auto;
+                font-size: 1.6rem;
+                line-height: calc(25 / 16);
+                color: #000000;
+            }
+        }
+        
+    }
+    .new-article-wrap {
+        width: 100%;
+        flex-direction: column;
+        padding-bottom: 0rem;
+        
+        .result__item_bottom {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            @include sp {
+                gap: 2rem;
+                margin-bottom: 2.2rem;
+            }
+            .result__item_detail__image {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    
+                img {
+                    width: 26rem;
+                    height: auto;
+                    aspect-ratio: 260 / 183; /* 比率を維持 */
+                    overflow: hidden; /* はみ出た部分をカット */
+                    height: auto;
+                    overflow: visible;
+                    @include sp {
+                        width: 16rem;
+                        aspect-ratio: 160/113;
+                    }
+                    
+                }
+               
+                .result__item_detail__image__logo {
+                    width: 10rem;
+                    height: 3rem;
+                    position:absolute;
+                    top: 0;
+                    left: 0;
+                    font-size: 1.5rem;
+                    line-height: calc(25 / 15);
+                    font-weight: 700;
+                    color: $color-main;
+                    background: $color-red;
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                    display:grid;
+                    place-content: center;
+                    z-index: 100;
+                    @include sp {
+                        width: 8rem;
+                    }
+                }
+            }
+            .result__item_detail__text {
+                flex:1;
+                text-align: left;
+                .result__item__text-text {
+                    width:100%;
+                    font-size: 2rem;
+                    line-height: calc(25 / 20);
+                    font-weight: 700;
+                    color: #000000;
+                    margin-bottom: 0.8rem;
+                    @include sp {
+                        font-size: 1.7rem;
+                        line-height: calc(28 / 17);
+                    }
+                }
+                .result-item__date {
+                    width:100%;
+                    font-size: 1.7rem;
+                    line-height: calc(30 / 17);
+                    margin-bottom: 1.1rem;
+                    padding-left:0.4rem;
+                    color: #000000;
+                }
+                &-text {
+                    width:100%;
+                    font-size: 1.8rem;
+                    line-height: calc(30 / 18);
+                }
+            }
+        }
+    }
+    
+    
+    
+}

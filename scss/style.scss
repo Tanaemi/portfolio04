@@ -1,0 +1,63 @@
+
+//foundation baseの読み込み
+@use './foundation/base';
+
+//foundation mixinの読み込み
+@use './foundation/mixin' as *;
+
+//foundation variableの読み込み
+@use './foundation/variable' as *;
+
+//foundation normalizeの読み込み
+@use './foundation/normalize';
+
+//layout headerの読み込み
+@use './layout/header';
+
+//layout footerの読み込み
+@use './layout/footer';
+
+//objectの読み込み
+//component
+@use './object/component/component-fv';
+@use './object/component/component-button';
+@use './object/component/component-title';
+@use './object/component/component';
+
+//projectの読み込み
+//main
+@use './object/project/index-main';
+@use './object/project/plan-main';
+@use './object/project/blog_list-main';
+@use './object/project/blog_detail-main';
+@use './object/project/contact_form-main';
+@use './object/project/contact_send-main';
+@use './object/project/f404-main';
+@use './object/project/search-main';
+@use './object/project/result_list-main';
+@use './object/project/result_details-main';
+
+//concept
+@use './object/project/index-concept';
+//message
+@use './object/project/index-message';
+@use './object/project/plan-message';
+@use './object/project/blog_list-message';
+@use './object/project/blog_detail-message';
+@use './object/project/contact_form-message';
+@use './object/project/contact_send-message';
+@use './object/project/f404-message';
+@use './object/project/search-message';
+@use './object/project/result_list-message';
+@use './object/project/result_details-message';
+
+//resultの読み込み
+//resultの読み込み
+//list
+@use './object/project/result-list';
+//details
+@use './object/project/result_details';
+//utilityの読み込み
+//utility
+@use './object/utility/utility';
+

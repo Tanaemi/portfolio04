@@ -1,0 +1,175 @@
+@use '../../foundation/variable' as *;
+@use '../../foundation/mixin' as *;
+
+.c-title {
+    &__top-sec01 {
+        width: 100%;
+        h3 {
+            font-size: 3.5rem;
+            line-height: calc(50 / 35);
+            font-weight: 700;
+            color: $color-red;
+            margin-bottom: 1.7rem;
+            @include sp {
+                font-size: 2.5rem;
+                font-weight: 700;
+                line-height: calc(40 / 25);
+                margin-bottom: 0.7rem;
+            }
+        }
+        p {
+            font-size: 1.8rem;
+            line-height: calc(30 / 18);
+            color: #000000;
+            margin-bottom: 3rem;
+            @include sp {
+                display: flex;
+                margin-bottom: 2rem;
+                justify-content:flex-start;
+                text-align: left;
+                padding:0 2rem;
+            }
+        }
+    }
+    &__top-sec02 {
+        h3 {
+            font-size: 3rem;
+            line-height: calc(50 / 30);
+            font-weight: 700;
+            color: $color-main;
+            margin-bottom: 3rem;
+            place-content: center;
+            align-items: center;
+            @include sp {
+                font-size: 2.5rem;
+                line-height: calc(40 / 25);
+                margin-bottom: 1rem;
+            }
+        }
+        p {
+            font-size: 1.8rem;
+            line-height: calc(30 / 18);
+            color: $color-main;
+            text-align: center;
+        }
+    }
+    &__top-sec03 {
+        margin-top: 0.3rem;
+        text-align: center;
+       
+        @include sp {
+            margin-top: 0rem;
+        }
+        h3 {
+            font-size: 3rem;
+            line-height: calc(50 / 30);
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 3rem;
+            
+            @include sp {
+                font-size: 2.5rem;
+                line-height: calc(40 / 25);
+                margin-top: 0rem;
+                margin-bottom: 3.6rem;
+            }
+        }
+    }
+    &__top-sec04 {
+        h3 {
+            font-size: 3rem;
+            margin-bottom: 3.6rem;
+            text-align: center;
+            @include sp {
+                width:100%;
+                max-width: 37.5rem;
+                overflow: hidden;
+                font-size: 2.5rem;
+                text-align: center;
+            }
+        }
+    } 
+    &__top-sec05 {
+        h3 {
+            font-size: 3rem;
+            line-height: calc(50 / 30);
+            font-weight: 700;
+            color: #000;
+            display: grid;
+            place-content: center;
+            margin-left: 0.2rem;
+            margin-bottom: 6rem;
+            @include sp {
+                width:100%;
+                font-size: 2.5rem;
+                line-height: calc(40 / 25);
+                margin-bottom: 2.3rem;
+            }
+        
+        }
+    }
+    &__top-sec06 {
+        h3 {
+            font-size: 3rem;
+            line-height: calc(50 / 30);
+            color: #000;
+            margin:  0rem 0 3.5rem;
+            display: grid;
+            place-content: center;
+            @include sp {
+                font-size: 2.5rem;
+            }
+        }
+    }
+    &__blog_detail {
+        margin-bottom: 0.5rem;
+        h3 {
+            font-size: 2.5rem;
+            line-height: calc(40 / 25);
+            font-weight: 700;
+            color: #000;
+        }
+    }
+    &__top-sec07 {
+        margin-bottom: 4rem;
+        h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #000;
+            @include sp {
+                font-size: 2.5rem;
+            }
+        }
+        
+    }
+    &__blog_detail-a {
+        margin-bottom: 0.7rem;
+        @include sp {
+            margin-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 2.5rem;
+            line-height: calc(40 / 25);
+            font-weight: 700;
+            color: #000;
+            @include sp {
+                font-size: 2rem;
+                line-height: calc(30 / 20);
+                letter-spacing: -0.3px;
+            }
+        }
+    }
+    &__blog_detail-b {
+        margin-bottom: 1.5rem;
+        h3 {
+            font-size: 2rem;
+            line-height: calc(40 / 20);
+            font-weight: 700;
+            color: #000;
+            @include sp {
+                line-height: calc(30 / 20);
+                margin-bottom: 1.7rem;
+            }
+        }
+    }
+}
