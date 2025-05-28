@@ -44,7 +44,7 @@ $(function() {
       }
   
       // トップに戻るボタン
-      if (scrollTop > 100) {
+      if (scrollTop > 300) {
         $('.top-back-btn').addClass('active');
       } else {
         $('.top-back-btn').removeClass('active');
@@ -107,7 +107,6 @@ $(function() {
   //   });
   // });
     
-
   
   //AOS
   AOS.init({
@@ -153,11 +152,6 @@ $(function() {
         }
     });
 });
-
-
-  
-  
-
 
 
 //ページャー

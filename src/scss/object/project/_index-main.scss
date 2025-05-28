@@ -1,0 +1,64 @@
+@use '../../foundation/variable' as *;
+@use '../../foundation/mixin' as *;
+
+.fv {
+  position: relative; 
+  @include sp {
+    padding-top: 5rem !important;
+  }
+  .fv__img-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    @include sp {
+      padding-top: 0rem; /* ヘッダー分のスペースを確保 */
+      margin-top: 0rem;
+      vertical-align: bottom;
+    }
+  }
+  // オーバーレイ
+  &::before {
+    content: ''; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(80, 80, 80, 0.502);
+    z-index: 1; // 画像の上に表示
+  }
+
+  // コンテンツ（テキストなど）
+  &__contents {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2; // オーバーレイの上に表示
+    // @include sp {
+      
+    // }
+  
+    h2 {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #fff; // テキストを見やすくする
+      position: absolute;
+      top: 48%;
+      left: 28%;
+      @include sp {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #fff; // テキストを見やすくする
+        position: absolute;
+        top: 43.7%;
+        left: 10%;
+      }
+    }
+  }
+}
