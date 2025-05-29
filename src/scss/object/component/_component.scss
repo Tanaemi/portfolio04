@@ -1,0 +1,268 @@
+@use '../../foundation/variable' as *;
+@use '../../foundation/mixin' as *;
+
+//フッター上のお問い合わせボタン
+.sticky {
+    position: sticky; 
+    bottom: 0rem;
+    right: 0rem;
+    width: 30rem;
+    height: 6rem;
+    // width: 100%;
+    height: auto;
+    text-align: right;
+    // position:relative;
+    z-index:888;
+    @include sp {
+        bottom: 0rem;
+        left: 5%;
+        // text-align: center;
+    }
+    
+    .contact-button {
+        font-size: 2rem;
+        line-height: calc(33 / 20);
+        cursor: pointer;
+        vertical-align: middle;
+        padding: 1.7rem 8.4rem 1rem 8rem;
+        background: $color-red;
+        border: 1px solid $color-red;
+        color: $color-main;
+        // position: sticky;
+        position: absolute; 
+        bottom: 0rem;
+        left: 78rem;
+        width: 30rem;
+        height: 6rem;
+        text-align: center;
+        letter-spacing: 0.2rem;
+        justify-content: flex-end;
+        @include sp {
+            width: 33.5rem;
+            height: 6rem;
+            padding: 1.4rem 8.8rem 1.1rem 8.8rem;
+            // right: 2rem;
+            position: absolute; 
+            bottom: 0rem;
+            left: 0rem;
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &__inner {
+        max-width: 88rem;
+    }
+}
+
+/* stickyを適用しない要素 */
+.contents {
+    position: relative;
+    width: 100%;
+    height: 8rem;
+    background: lightcoral;
+}
+
+
+#global_nav-breadcrumbs {
+    width: 100%;
+    height: auto;
+    background: #E8E8E8;
+    text-align: left;
+    align-items: center;
+    @include sp {
+        height: auto; 
+        padding-left: 0rem;
+        
+    }
+    .global_nav_blog-detail{
+        display:flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        justify-content: flex-start;
+        align-items: center;
+        @include sp {
+            width:100%;
+            height: auto;
+            flex-wrap: wrap;
+            margin: 0rem;
+            padding: 0rem 0rem;
+        }
+        ol {
+            display: flex;
+            align-items: center;
+            @include sp {
+                padding: 0;
+                flex-wrap:wrap;
+                
+            }
+            &.detail {
+                li {
+                    @include sp {
+                        width: auto;
+                        margin-right:0rem;
+                        font-size: 1.6rem;
+                        // line-height: 1.4;//sp行間ずれ
+                        padding: 0;
+                        flex-wrap: wrap; 
+                        float: right;
+                        align-items: flex-end;
+                    }
+                }
+            }
+            
+        }
+        li {
+            display:flex;
+            font-size: 1.6rem;
+            line-height: calc(33 / 16);
+            color: #000000;
+            text-decoration: none;
+            padding-right: 0.5em;   //plan一致
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0.85rem 0;    
+            @include sp {
+                width: auto;
+                margin-right:1rem;
+                font-size: 1.6rem;
+                // line-height: calc(33/16);
+                margin: 0.14rem 0;
+                flex-wrap: wrap; 
+                float: right;
+            }
+            
+        }
+        .line2 {
+            @include sp {
+                width: 100%;
+                margin-top: -0.8rem;
+                margin-bottom: 0.2rem;
+            }
+           
+        }
+        li:after {
+            padding: 0 0.6rem;
+        }
+        .contact {
+            padding-left: 2rem; //contact
+        }
+    }
+    .global_nav_blog-detail.contact_form,
+    .global_nav_blog-detail.contact_send,
+    .global_nav_blog-detail.search {
+        padding-left: 0rem; 
+        li {
+            @include sp {
+                padding: 0;
+            }
+              
+        }
+    }
+    
+    .global_nav_blog-detail li:after {
+        content:'>';
+        padding:0 1.3em;
+        color: #000000;
+        @include sp {
+            padding:0 1.2em;
+        }
+    }
+    .global_nav_blog-detail li:last-child:after {
+        content:'';
+    }
+    .global_nav_blog-detail li a {
+        text-decoration: none;
+        color: #000000;
+        @include sp {
+            align-items: center;
+        }
+    }
+    .global_nav_blog-detail li a:hover,
+    .global_nav_result-details li a:hover {
+        text-decoration: underline;
+    }
+
+    .global_nav_result-details{
+        display:flex;
+        list-style: none;
+        margin: 0;
+        padding-bottom: 0.7rem;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 2rem; //contact
+        @include sp {
+            width:100%;
+            height: auto;
+            flex-wrap: wrap;
+            margin: 0rem;
+            padding-left: 0rem;
+        }
+        ol {
+            display: flex;
+            align-items: center;
+            @include sp {
+                padding: 0;
+                flex-wrap:wrap;
+            }
+        }
+        li {
+            margin: 0;
+            padding: 0.2rem 0.5rem; 
+            display:flex;
+            font-size: 1.6rem;
+            line-height: calc(33 / 16);
+            color: #000000;
+            text-decoration: none;
+            // padding-right: 0.5em;   //plan一致
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 1rem;    
+            @include sp {
+                width: auto;
+                font-size: 1.6rem;
+                line-height: calc(20 / 16);
+                flex-wrap: wrap; 
+                float: right;
+                padding-top: 0rem;
+            }
+        }
+    }
+    .global_nav_result-details li:after {
+        content:'>';
+        padding:0 1.5rem;
+        color: #000000;
+    }
+    .global_nav_result-details li:last-child:after {
+        content:'';
+    }
+}
+
+.list {
+    width: 100%;
+    display: inline-block;
+    &-blog-detail {
+        padding-bottom: 3.8rem;
+        padding-left: 2rem;
+        border-bottom: 0.5px solid #000000;
+        font-size: 1.8rem;
+        line-height: calc(30 / 18);
+        text-align: left;
+        text-decoration: none;
+        margin-top: 2.8rem;
+        margin-bottom: 4.05rem;
+    }
+}   
+
+/* TOPボタン出現後のスタイル */
+.c-button top-back-btn.fadeIn {
+    opacity: 1; /* フェードインアニメーション */
+    visibility: visible; /* ボタンを表示 */
+}
+
+.s-fixed {
+    position:sticky;
+    bottom:0;
+    left:0;
+}
