@@ -3,24 +3,23 @@
 
 //フッター上のお問い合わせボタン
 .sticky {
-    position: sticky; 
-    bottom: 0rem;
-    right: 0rem;
-    width: 30rem;
-    height: 6rem;
-    // width: 100%;
-    height: auto;
-    text-align: right;
-    // position:relative;
-    z-index:888;
-    @include sp {
-        bottom: 0rem;
-        left: 5%;
-        // text-align: center;
-    }
+    // position: sticky; 
+    // bottom: 0rem;
+    // right: 0rem;
+    // width: 33.5rem;
+    // height: 6rem;
+    // height: auto;
+    // text-align: right;
+    // z-index:888;
+    // @include sp {
+    //     bottom: 0rem;
+    //     left: 5%;
+    //     // text-align: center;
+    // }
     
     .contact-button {
         font-size: 2rem;
+        font-weight: 700;
         line-height: calc(33 / 20);
         cursor: pointer;
         vertical-align: middle;
@@ -28,7 +27,6 @@
         background: $color-red;
         border: 1px solid $color-red;
         color: $color-main;
-        // position: sticky;
         position: absolute; 
         bottom: 0rem;
         left: 78rem;
@@ -37,19 +35,21 @@
         text-align: center;
         letter-spacing: 0.2rem;
         justify-content: flex-end;
+        transition: 0.4s ease-in-out;
         @include sp {
             width: 33.5rem;
             height: 6rem;
             padding: 1.4rem 8.8rem 1.1rem 8.8rem;
-            // right: 2rem;
             position: absolute; 
             bottom: 0rem;
             left: 0rem;
         }
         &:hover {
-            opacity: 0.8;
+            background-color: $color-main;
+            color: $color-red;
         }
     }
+    
     &__inner {
         max-width: 88rem;
     }

@@ -1,6 +1,8 @@
 @use '../../foundation/variable' as *;
 @use '../../foundation/mixin' as *;
 
+
+//new
 .top-sec01 {
     width: 100%;
     height: auto;
@@ -8,49 +10,57 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    padding-top: 6.8rem;
-    padding-bottom: 2.4rem;
+    padding: 62px 111.34px 36px 110.4px;
     @include sp {
-        padding-top: 4.8rem;
-        padding-bottom: 1.5rem;
+        padding: 4.8rem 0rem 1.5rem;
     }
     &__wrap {
         display:flex;
         justify-content: center;
         
-    }
-    &__image {
-        width: 85.81rem;
-        height: 5.65rem;
-        margin-top: 3.4rem;
-        justify-content: center;
-        text-align: center;
-        display: grid;
-        place-content: center;
-        margin: 0 auto;
-        @include sp {
-            width: 33.5rem;
-            height: 3.7rem;
-            display:grid;
+        .top-sec01__image {
+            width: 79.45%;
+            height: auto;
+            margin-top: 3.4rem auto 0;
+            justify-content: center;
+            text-align: center;
+            display: grid;
             place-content: center;
+            
             img {
-                max-width: 100%;
-                height: auto;
-                
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                display: block;
             }
+            @include sp {
+                width: 33.5rem;
+                height: 3.7rem;
+                display: grid;
+                place-content: center;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            
         }
-        
+    
+    }
+    &__items-wrap {
+        position: relative;
     }
     &__items {
         width: 100%;
         height: 100%;
         display: block;
         justify-content: center;
-        text-align: center;
-        position: relative;
         margin-bottom: 2.7rem;
-        top: 0;
-        left: 0;
+        position: relative; // arrowを中で中央に配置できるように
+        display: flex;
+        flex-direction: column;
+        align-items: center; // ← これで中央に揃える！
+        text-align: center;
         &__item {
             display: flex;
             width: 100%;
@@ -63,19 +73,21 @@
                 align-items: center;
             }
             &:nth-child(1) {
-                margin-top: 3rem;
+                margin-top: 3.3rem;
                 @include sp {
-                    margin-top: 4rem;
+                    margin-top: 3.4rem;
                 }
             }
             &:nth-child(2) {
-                margin-top: 2.4rem;
-                
+                margin-top: 2.9rem;
+                @include sp {
+                    margin-top: 3.8rem;
+                }
             }
             &:nth-child(3) {
-                margin-top: 2rem;
+                margin-top: 3rem;
                 @include sp {
-                    margin-top: 2.5rem;
+                    margin-top: 3.8rem;
                 }
             }
             .left-part {
@@ -88,10 +100,11 @@
                     width:100%;
                     display: flex;
                     font-size: 2.5rem;
+                    font-weight: 700;
                     color: $color-red;
                     justify-content: flex-end;
                     padding-right: 2.91rem;
-                    letter-spacing: 0.09rem;
+                    // letter-spacing: 0.094rem;
                     align-items: center;
                     @include sp {
                       font-size: 2rem;
@@ -121,15 +134,14 @@
                 @include sp {
                     width:45%;
                 }
-                h3 {
+                h4 {
+                    width:100%;
+                    display: flex;
                     font-size: 2.3rem;
-                    line-height: calc(50 / 23);
+                    // line-height: calc(50 / 23);
                     color: $color-red;
                     color: #000000;
                     padding-left: 3rem;
-                    // align-items: flex-start;
-                    position:relative;
-                    top: -0.6rem;
                     @include sp {
                         font-size: 2rem;
                         top: 0rem;
@@ -139,43 +151,79 @@
         }
         
     }
-    .top-sec01__items__item:nth-child(2) h4,
-    .top-sec01__items__item:nth-child(3) h4 {
-        position: relative;
-        top: -0.7rem;
-    }
-    .top-sec01__items::before {
-        content: '';
+    // .arrow {
+    //     position: absolute;//relativeを　absoluteに変更
+    //     top: 37%;
+    //     left: 48.4%;
+    //     transform: translate(-50%, -50%);
+    //     display:inline-block;
+    //     width:3px;
+    //     height:190.4px;
+    //     margin:0 14.3px;
+    //     border-radius:9999px;
+    //     background-color: $color-red;
+    //     z-index: 1;
+    // }
+    // .arrow::before,
+    // .arrow::after {
+    //     content:"";
+    //     position: absolute;
+    //     top:0;
+    //     left: calc(50% - 1.5px);
+    //     width:3px;
+    //     height:22.2px;
+    //     border-radius: 9999px;
+    //     background-color: $color-red;
+    //     transform-origin: 50% 1.5px;
+    // }
+    // .arrow::before {
+    //     transform: rotate(48.15deg)
+    // }
+    // .arrow::after {
+    //     transform: rotate(-48.15deg)
+    // }
+
+    .arrow {
         position: absolute;
-        top: -15%; /* 上からの位置を調整（デザインに合わせて変更） */
-        left: 50%;
-        width: 0.3rem; /* 線の太さ */
-        height: 96%; /* 矢印の長さ（要調整） */
-        background-color: $color-red; /* 線の色 */
-        transform: translateX(-50%); /* 中央揃え */
-        @include sp {
-            height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 50%; // 本当の中央
+        transform: translateX(-50%);
+        width: 3px;
+        background-color: $color-red;
+        z-index: 0;
+        // 長さ調整（必要に応じて）
+        height: 90%; // アイテム全体に合わせて伸びる
+      
+        &::before {
+          content: "";
+          position: absolute;
+          top: -1%;
+          left: 50%;
+          width: 3px;
+          height: 22.2px;
+          border-radius: 9999px;
+          background-color: $color-red;
+          transform-origin: 50% 1.5px;
         }
-    }
-    
-    .top-sec01__items::after {
-        content: '';
-        position: absolute;
-        top: -14%; /* 矢印の位置 */
-        left: 48.6%;
-        content: "";
-        position: absolute;
-        right: -3rem;
-        top: -3rem;
-        width: 2rem;
-        height: 2rem;
-        border-top: 4px solid $color-red;
-        border-right: 4px solid $color-red;
-        transform: rotate(-45deg);
-        @include sp {
+        &::after {
+            content: "";
             position: absolute;
-            left: 17.8rem;
-            top: -2.8rem;
+            top: -2%;
+            left: 50%;
+            width: 3px;
+            height: 22.2px;
+            border-radius: 9999px;
+            background-color: $color-red;
+            transform-origin: 50% 1.5px;
+        }
+      
+        &::before {
+          transform: rotate(48.15deg) translateX(-50%);
+        }
+      
+        &::after {
+          transform: rotate(-48.15deg) translateX(-50%);
         }
     }
 }
@@ -189,14 +237,14 @@
     justify-content: center;
     text-align: center;
     color: #fff;
-    padding-top: 6.4rem;
-    padding-bottom: 6.2rem;
+    padding-top: 3.4rem;
+    padding-bottom: 3rem;
     @include sp {
-        padding-top: 4.8rem;
-        padding-bottom: 4rem;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
     }
     .inner {
-        padding:0 10rem;
+        padding:0 5rem;
 
     }
     &__text {
@@ -228,6 +276,7 @@
         }
     }
 }
+
 .top-sec03 {
     width: 100%;
     height: auto;
@@ -296,7 +345,7 @@
             justify-content: flex-start;
             @include sp {
                 margin-right: 0rem;
-                padding: 0 2rem;
+                // padding: 0 2rem;
             }
             
             h3 {
@@ -307,12 +356,14 @@
                 padding-left: 5rem;
                 padding-bottom: 1rem;
                 border-bottom: 2px solid $color-red;
+                align-items: flex-start;
+                
                 @include sp {
                     font-size: 2rem;
                     line-height: calc(30 / 20);
                     margin-bottom: 1.9rem;
                     padding-left: 0rem;
-                    padding-bottom: 0.9rem;
+                    padding-bottom: 0.7rem;
                 }
             }
         }
@@ -326,6 +377,7 @@
                 margin-top: 4rem;
                 justify-content: flex-start;
                 padding-left:5rem;
+                line-height: calc(33 / 18);
                 @include sp {
                  font-size: 1.6rem;
                  line-height: calc(30 /16);
@@ -386,16 +438,16 @@
       width: 100%;
       max-width: 92rem;
       margin: 0 auto;
+      display:flex;
+      gap: 4rem;
       @include sp {
         width: 100% !important;
       }
     }
     .test-slick__item {
-      margin-right: 0 auto;
-      padding: 0 1.9rem;
       background-color: $color-red;
       width:100%;
-     
+      flex-shrink: 0; 
       @include sp {
         display: flex;
         flex-direction: column;
@@ -463,6 +515,8 @@
             overflow-x: hidden;
         }
     }
+    
+      
     //スライダー矢印
     .slick-arrow:before {
         content:""!important;
@@ -515,6 +569,8 @@
 }
 
 .top-sec05 {
+    width:100%;
+    display: flex;
     padding-top: 5.4rem;
     padding-bottom: 4rem;
     @include sp {
@@ -526,143 +582,219 @@
         width: 100%;
         display: flex;
     }
-    &__items {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: flex-start;
-        text-align: center;
-        position: relative;
-        margin-bottom: 7rem;
+    &__step-circle{
+        width: 12.1rem;
         @include sp {
-            margin-top: 1.1rem;
-            margin-bottom: 1.9rem;
+            width: 4.8rem;
         }
-       
-        &:nth-of-type(3) {
-            margin-bottom: 5.6rem;
+        span {
+            width:2rem;
+            height:2rem;
+            display: block;
+            background:  $color-red;
+            border-radius: 50%;
+            margin: 7.39px 49.9px 5.61px 51.02px;
             @include sp {
-                margin-bottom: 4.4rem;
-                margin-top: 1rem;
-                margin-bottom: 2.8rem;
+                margin:0 1rem;
+                // margin-left: 1rem;
             }
         }
         
-        span {
-            width: 2rem;
-            height: 2rem;
-            background: $color-red;
-            border-radius: 50%;
-            position: relative;
-            top: 0;
-            left: 0;
-            margin-top: 1rem;
-            // margin-right:5.3rem;
-            @include sp {
-                margin-top: 0rem;
-                margin-left: 3rem; 
-            }
-            &::before {
-                content: '';
-                position: absolute;
-                top: 50%; /* 上からの位置を調整（デザインに合わせて変更） */
-                left: 50%;
-                width: 0.3rem; /* 線の太さ */
-                height: 15rem; /* 矢印の長さ（要調整） */
-                background-color: $color-red; /* 線の色 */
-                transform: translateX(-50%); /* 中央揃え */
-                @include sp {
-                    height: 19rem;
-                
-                }
-            }
-           
-        }
-        &:nth-of-type(2) span,
-        &:nth-of-type(3) span {
-            margin-top:0;
-        }
-        &:last-child span  {
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0rem; /* 上からの位置を調整（デザインに合わせて変更） */
-                left: 1rem;
-                width: 0.3rem; /* 線の太さ */
-                height: 6rem; /* 矢印の長さ（要調整） */
-                background-color: $color-red; /* 線の色 */
-                transform: translateX(-50%); /* 中央揃え */
-                @include sp {
-                    height: 15rem;
-                }
-            }
-            &::after {
-                    content: '';
-                    position: absolute;
-                    left: 0rem;
-                    top: 3.7rem;
-                    width: 2rem;
-                    height: 2rem;
-                    border-left: 4px solid $color-red;
-                    border-bottom: 4px solid $color-red;
-                    transform: rotate(-45deg);
-                    @include sp {
-                        position: absolute;
-                        left: 0rem;
-                        top: 13rem;
-                    }
-            }
-
-        }
-        .top_sec05__text {
-            display: flex;
-            @include sp {
-                flex-direction: column;
-                flex: 1;
-            }
-            .title {
-                width: 15.4rem;
-                font-size: 2.2rem;
-                // line-height: calc(33 / 22);
-                font-weight: 700;
-                color: $color-red;
-                text-align: left;
-                margin-left: 5rem;
-                margin-right:3.8rem;
-                &:last-of-type(4) {
-                    @include sp {
-                        margin-left: 2.2rem;
-                        margin-bottom:1.9rem;
-                    }
-                }
-                @include sp {
-                    margin-left: 2rem;
-                    margin-bottom: 1.2rem;
-                }
-            }
-            .text {
-                flex: 1;
-                font-size: 1.8rem;
-                line-height: calc(30 / 18);
-                color: #000;
-                text-align: left;
-                margin-top: -0.9rem;
-                @include sp {
-                    font-size: 1.6rem;
-                    line-height: calc(30 / 16);
-                    margin: 0 2rem;
-                }
-            }
-        }
     }
-    
-    .top-sec05-wrap {
-        position: relative;
+    &__text {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex:1;
+        align-items: flex-start;
+        @include sp {
+            display: block;
+        }
     }
+    &__text-title {
+        width: 154px;
+        font-size: 2.2rem;
+        font-weight: 700; 
+        line-height: calc(33 / 22);
+        color: $color-red;
+        text-align: left;
+        padding-top: 2px;
+        @include sp {
+            line-height: 1;
+            // margin-left: 2.19rem;
+        }
+    }
+    &__text-text {
+        width: 100%;
+        display: flex;
+        font-size: 1.8rem; 
+        line-height: calc(30 / 18);
+        color: #000000;
+        text-align: left;
+        padding-top: 2px;
+        margin-left: 3.8rem;
+        flex:1;
+        align-items: flex-start;
+        @include sp {
+            margin-left: 0rem;
+            font-size: 1.6rem; 
+            line-height: calc(30 / 16);
+            padding-top: 1.3rem;
+        }
+    } 
+    .top-sec05__items {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-bottom: 6.8rem;
+
+        @include sp {
+          display:flex;
+          flex-direction: row; // スマホは縦並びが自然
+          margin-bottom: 1.9rem;
+        }
+        &:nth-of-type(1) {
+            margin-bottom: 6.8rem;
+            @include sp {
+              margin-bottom: 4rem;
+            }
+        }
+        &:nth-of-type(2) {
+           margin-bottom: 6.84rem;
+           @include sp {
+            margin-bottom: 4.2rem;
+          }
+        }
+        &:nth-of-type(3) {
+            margin-bottom: 5.6rem;
+            @include sp {
+            margin-bottom: 4.4rem;
+            margin-top: 1rem;
+            margin-bottom: 3.8rem;
+            }
+        } 
+    }           
+
 }
+
+
+
+        
+        
+        
+        
+        // 
+        //     span {
+        //       width: 2rem;
+        //       height: 2rem;
+        //     background: $color-width: 15.4rem;red;
+        //       border-radius: 50%;
+        //       position: relative;
+        //     top: 0;
+        //     left: 0;
+        //     margin-top: 1rem;
+        //     // margin-right:5.3rem;
+        //       @include sp {
+        //         margin-top: 0rem;
+        //         margin-left: 3rem; 
+        //       }
+        //     &::before {
+        //         content: '';
+        //         width: 0.3rem;
+        //         height: 18.8rem;
+        //         background: $color-red;
+        //         display: block;
+        //         position: absolute;
+        //         top: 50%;  
+        //         left: 50%;
+        //         width: 0.3rem;
+        //         height: 15rem; 
+        //         background-color: $color-red; 
+        //         transform: translateX(-50%); 
+        //         @include sp {
+        //             height: 19rem;
+                
+        //             }
+        //         }
+           
+        // }
+        // &:nth-of-type(2) span,
+        // &:nth-of-type(3) span {
+        //     margin-top:0;
+        // }
+        // &:last-child span  {
+        //     &::before {
+        //         content: '';
+        //         position: absolute;
+        //         top: 0rem; 
+        //         left: 1rem;
+        //         width: 0.3rem; 
+        //         height: 6rem; 
+        //         background-color: $color-red;
+        //         transform: translateX(-50%); 
+        //         @include sp {
+        //             height: 15rem;
+        //         }
+        //     }
+        //     &::after {
+        //             content: '';
+        //             position: absolute;
+        //             left: 0rem;
+        //             top: 3.7rem;
+        //             width: 2rem;
+        //             height: 2rem;
+        //             border-left: 4px solid $color-red;
+        //             border-bottom: 4px solid $color-red;
+        //             transform: rotate(-45deg);
+        //             @include sp {
+        //                 position: absolute;
+        //                 left: 0rem;
+        //                 top: 13rem;
+        //             }
+        //         }
+        // }
+//   }
+        
+        
+        // .top_sec05__text {
+        //     display: flex;
+        //     @include sp {
+        //         flex-direction: column;
+        //         flex: 1;
+        //     }
+        //     .title {
+        //         width: 15.4rem;
+        //         font-size: 2.2rem;
+        //         // line-height: calc(33 / 22);
+        //         font-weight: 700;
+        //         color: $color-red;
+        //         // justify-content: flex-start;
+        //         text-align: left;
+        //         padding-top: 2px;
+        //         @include sp {
+        //             margin-left: 2.19rem;
+        //         }
+        //     }
+        // }
+        
+        // .top_sec05__text-text {
+        //     width: 56.7rem;
+        //     padding-left:3.8rem;
+        //     text-align: left;
+        //     font-size: 1.8rem;
+        //     line-height: 1.34;
+        //     color: #000000;
+        //     @include sp {
+        //         width: 100%;
+        //         font-size: 1.6rem;
+        //         line-height: calc(30 / 16);
+        //         padding-top: 1rem;
+        //         padding-left: 2.2rem;
+        //     }
+        // }
+    
+
+
+
+
 .top-sec06 {
     width: 100%;
     height: auto;
@@ -673,15 +805,15 @@
     padding-top: 0.7rem;
     padding-bottom: 5.3rem;
     @include sp {
-        padding-top: 3rem;
-        padding-bottom: 4.8rem;
+        padding-top: 4.2rem;
+        padding-bottom: 5rem;
     }
     .accordion {
         width:88rem;
         border-bottom: 1px solid #ddd;
         @include sp {
             width: 100%;
-            padding: 0 2rem;
+            // padding: 0 2rem;
         }
         
     }
@@ -709,6 +841,7 @@
             width: 3.5rem;
             height: 3.5rem;
             font-size: 2rem;
+            font-weight: 700;
             color: $color-main;
             background: #000;
             border-radius: 50%;
@@ -839,6 +972,7 @@
             width: 3.5rem;
             height: 3.5rem;
             font-size: 2rem;
+            font-weight: 700;
             color: $color-main;
             background: $color-red;
             border-radius: 50%;
@@ -867,7 +1001,7 @@
         display: flex;
         padding: 0.4rem 2rem 1rem;
         @include sp {
-            padding: 0.1rem 0 1rem;
+            padding: 0.1rem 0 0.6rem;
             // padding: 1.4rem 2rem;
             h3 {
                 font-size: 1.6rem;
@@ -1008,7 +1142,7 @@
     justify-content: center;
     text-align: center;
     padding-top: 2rem;
-    padding-bottom: 20rem;
+    padding-bottom: 13.4rem;
     @include sp {
         padding-top: 0rem;
         padding-bottom: 0rem;
@@ -1020,10 +1154,13 @@
         column-gap: 5rem;
         @include sp {
             flex-direction: column;
+            column-gap: 0;
+            row-gap: 0rem; //適宜
         }
         & a {
             display: block;
-            width: 26rem;
+            // width: 26rem;
+            width: 100%;
             aspect-ratio: 26/20;
         }
         .blog-item {
@@ -1048,8 +1185,9 @@
                     width: 100%;
                     height: auto;
                     aspect-ratio: 33.5 / 20;
-                    margin-bottom: 1.4rem;
+                    margin-bottom: 3rem;
                 }
+                
                 img {
                     width:26rem;
                     height: 20rem;
@@ -1058,10 +1196,18 @@
                     left:0;
                     object-fit:cover;
                     margin: 0 auto;
+                    transition: opacity 0.3s ease;
                     @include sp {
-                        width: 33.5rem;
-                        height: 20rem;
-                        display:block
+                        // width: 33.5rem;
+                        width: 100%;
+                        // height: 20rem;
+                        height: auto;
+                        display:block;
+                        position: static;
+                        // margin-bottom: 3rem;
+                    }
+                    &:hover {
+                        opacity:0.8;
                     }
                 }
             }
@@ -1094,8 +1240,8 @@
                     text-align: left;
                     margin-top: 1.5rem;
                     @include sp {
-                        
                         line-height: calc(30 / 20);
+                        margin-top: 0rem;
                     }
                 }
             }
@@ -1112,9 +1258,22 @@
                     margin-top: 1.3rem;
                     @include sp {
                         line-height: calc(30 / 20);
-                        margin-top: 1rem;
+                        margin-top: 0rem;
+                        padding-top: 0.9rem;
                     }
                 }
+                
+                .top-sec07__blog__items .blog-item__date p {
+                    line-height: 1.5;
+                    margin-top: 1rem;
+                    word-break: break-word;
+                    white-space: normal;
+                    @include sp {
+                        line-height: calc(30 / 20);
+                        margin-top: 0rem;
+                    }
+                }  
+                  
             }
             &:last-child .blog-item__date {
                 @include sp {
@@ -1130,7 +1289,7 @@
         margin: 3.9rem 0 0rem;
         @include sp {
             margin: 3.9rem 0;
-            margin-bottom: 19.2rem;
+            margin-bottom: 12.5rem;
             justify-content: center;
         }
         a {
@@ -1152,8 +1311,5 @@
                 opacity:0.5;
             }
         }
-    }
-    
+    }  
 }
-
-

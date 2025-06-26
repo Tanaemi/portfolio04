@@ -4,14 +4,14 @@
 .blog {
     width: 100%;
     height: auto;
-    padding-bottom: 20.9rem;
+    padding-bottom: 13.9rem;
     padding-top: 5.7rem;
     @include sp {
         padding-top:3.8rem;
         padding-bottom: 0rem;
     }
     &__title {
-        margin-bottom: 3.8rem;
+        margin-bottom: 3.6rem;
         text-align: center;
         @include sp {
             margin-bottom: 3.9rem;
@@ -54,6 +54,7 @@
                 left: 0;
                 overflow: visible;
                 margin-top: 0.2rem;
+                position:relative;
                 @include sp {
                     width: 33.5rem !important;
                     height: auto;
@@ -68,7 +69,7 @@
                 }
             }
             &__logo {
-                width: 8rem;
+                width: 31%;
                 height: 3rem;
                 position:absolute;
                 top: 0;
@@ -81,6 +82,9 @@
                 text-align: center;
                 z-index: 100;
                 padding-top: 0.2rem;
+                position:absolute;
+                top:0;
+                left:0;
                 @include sp {
                     width: 9rem;
                 }
@@ -113,7 +117,7 @@
                     display: flex;
                     font-size: 1.7rem;
                     line-height: calc(30 / 17);
-                    margin-bottom: 0.8rem;
+                    margin-bottom: 1.2rem;
                     @include sp {
                         justify-content: flex-end;
                         // margin-bottom: 0.8rem;
@@ -133,7 +137,7 @@
         }
     } 
     
-    //ページネーション
+
     .pagination {
         display: flex;
         list-style: none;
@@ -141,39 +145,75 @@
         margin: 0 auto;
         margin-top: -0.1rem;
         justify-content: center;
+        
         @include sp {
-            padding-top: 2rem;
-            padding-bottom: 20rem;
+          padding-top: 2rem;
+          padding-bottom: 20rem;
         }
-    }
-    .pagination li {
+      }
+      
+      .pagination li {
+        width:5rem;
+        height:5rem;
         margin: 0.3rem 0.5rem;
         @include sp {
-            margin: 0.3rem 0.2rem;
+          margin: 0.3rem 0.2rem;
         }
-    }
-    .pagination a {
+      }
+      
+      
+      .pagination li:last-child {
+        margin-left: 0rem;
+      }
+      .pagination a {
+        width:5rem;
+        height:5rem;
         display: block;
         padding: 1.1rem 2rem;
-        border: 1px solid #333;
+        border: 1px solid #000000;
         text-decoration: none;
-        color: #333;
-        @include sp {
+        color: #000000;
+        // ▼ フォントスタイルをここに追加
+        font-family: "YuGothic", "游ゴシック", YuGothic, sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: 0%;
+      
+          @include sp {
             padding: 1.1rem 1.7rem;
-        }
+            font-size: 16px;
+            line-height: 28px;
+         }
+      
         .ul {
-            @include sp {
-                justify-content: center;
-            }
+          @include sp {
+            justify-content: center;
+          }
         }
-    }
-    .pagination .active a {
-        background-color: #333;
-        color: #fff;
+    }      
+    .pagination a:hover {
+        background-color: #000000;
+        color: $color-main;
+    } 
+      
+    .pagination .active a{
+        background-color: #000000;
+        color: #ffffff;
+        cursor: none !important;
+        // pointer-events: none !important;
+        // text-decoration: none;
     }
     .pagination .dots {
-        padding: 0.8rem 1.2rem;
-        border: none;
-        background: none;
+        display:flex;
+        align-items: center;
+        // padding: 0.5rem;
+        // font-size: 18px;
+        font-weight: 700;
+        color: #000;
+        line-height: 1;
+        justify-content: center;
+        margin:0;
+        
     }
 }
