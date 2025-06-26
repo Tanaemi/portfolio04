@@ -44,10 +44,10 @@ $(function() {
       }
   
       // トップに戻るボタン
-      if (scrollTop > 300) {
-        $('.top-back-btn').addClass('active');
+      if (scrollTop > 100) {
+        $('.top-back-btn__icon').addClass('active');
       } else {
-        $('.top-back-btn').removeClass('active');
+        $('.top-back-btn__icon').removeClass('active');
       }
     }
   });
@@ -193,4 +193,14 @@ function createPagination(currentPage, totalPages) {
   });
  }
 });
+
+
+
+(() => {
+  [...document.querySelectorAll('*')].forEach(el => {
+    if (el.scrollWidth > document.documentElement.clientWidth) {
+      el.style.outline = '2px solid magenta'; // はみ出し要素に枠線
+    }
+  });
+})();
 

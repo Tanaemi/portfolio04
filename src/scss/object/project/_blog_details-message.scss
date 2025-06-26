@@ -12,6 +12,7 @@
     }
    
     article {
+        
         .blog__item__image {
             margin-top: 7rem;
             margin-bottom: 4.6rem;
@@ -311,7 +312,7 @@
         .new-article-wrap {
             width: 100%;
             flex-direction: column;
-            padding-bottom: 15.4rem;
+            padding-bottom: 8.4rem;
             @include sp {
                 padding-bottom: 0rem;
             }

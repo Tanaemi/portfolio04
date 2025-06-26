@@ -51,7 +51,7 @@
       &-checkbox {
         width: 100%;
         display:flex;
-        align-items: left;
+        // align-items: left;
         margin-bottom: 1.9rem;
         @include sp {
           flex-direction: column;

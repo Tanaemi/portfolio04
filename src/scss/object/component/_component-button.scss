@@ -14,11 +14,23 @@
         display: grid;
         place-content: center;
         box-sizing: border-box;
+        font-family: YuGothic;
+        font-weight: 700;
+        font-size: 15px;
+        white-space: nowrap;
+        transition: 0.4s ease-in-out;
         @include sp {
             display:none;
         }
         &:hover {
-            opacity: 0.5;
+            // opacity: 0.5;
+            background-color: #ffffff;
+            color: $color-red;
+            border: 2px solid $color-red;
+        }
+        span {
+            letter-spacing: 20%;
+            white-space: nowrap;
         }
     }
     &_admission-fee,
@@ -110,6 +122,10 @@
             font-size: 2rem;
             width: 34rem;
         } 
+        &:hover {
+            background: $color-main;
+            color: $color-red;
+        }
     }
     &_button {
         display: flex;
@@ -129,6 +145,7 @@
             margin-top: 0rem;
             margin-bottom: 5rem;
         }
+        
     }
     &_blog-detail {
         display:flex;
@@ -188,7 +205,7 @@
             font-weight: 700;
             color: $color-main;
             text-align: left;
-            align-items: left;
+            // align-items: left;
             justify-content: left;
             margin-bottom: 3rem;
             
@@ -220,15 +237,25 @@
     background: #505050 50.2%; 
     border-radius: 50%;
     position: absolute;
-    bottom: 9rem;
-    right: -68rem;
+    bottom: 8.8rem;
+    right: -91.2rem;
     z-index: 88;
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
     @include sp {
-        bottom: 7.8rem;
-        right: -3.8rem; /* 画面内に表示する */
+        bottom: 7.9rem;
+        right: -26.8rem; 
+    }
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    &.active:hover {
+        opacity: 0.5;
     }
     &.result {
         position: absolute;
@@ -260,66 +287,75 @@
             right: -3.6rem;
         }
     }
-              
+   
     .arrow {
-        position: relative;
-        display: inline-block;
-        width: 2.32rem;
-        height: 1.54rem;
-        transform: rotate(180deg);
-        &::before,
-        &::after {
-        content: "";
-        position: absolute;
-        width: 0.5rem;
-        height: 2.3rem;
-        background-color: #ffffff;
-        top: -50%;
-        left: 50%;
-        transform-origin: bottom;
-        border-radius: 0.25rem;
-        
-        }
-        &::before {
-            transform: translateX(-0.1rem) rotate(-35deg);
-        }
-        &::after {
-            transform: translateX(-0.3rem) rotate(35deg);
-        }
+        transform: rotate(180deg); /* 上向き */
     }
 }
 
-.c-button.top-back-btn {
-    opacity: 1;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+
+.top-back-btn__icon {
+    width: 6.8rem;
+    height: 6.8rem;
+    background: #505050 50.2%; 
+    border-radius: 50%;
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 88;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    &.result {
+        position: absolute;
+        bottom: 9rem;
+        right: 12rem;
+        @include sp {
+            position: absolute;
+            bottom: 7.6rem;
+            right: -3.6rem;
+        }
+    }
+    &.result-list__icon {
+        position: absolute;
+        bottom: 9rem;
+        left: 66.4rem;
+        @include sp {
+            position: absolute;
+            bottom: 7.6rem;
+            right: -3.6rem;
+        }
+    }
+    &.result-details__icon {
+        position: absolute;
+        bottom: 9rem;
+        right: -68rem;
+        @include sp {
+            position: absolute;
+            bottom: 7.6rem;
+            right: -3.6rem;
+        }
+    }
+    
+    .arrow {
+        transform: rotate(180deg); 
+    }
+    
 }
-.c-button.top-back-btn:hover {
-    opacity: 0.5;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-  
-.c-button.top-back-btn.moving {
-    opacity: 0.3;
-}
+
 .contact-form-btn {
     position: absolute;
     bottom: 3rem;
     right: 10rem;
     @include sp {
     bottom: 2.3rem;
-    left: 25.8rem; /* 画面内に表示する */
+    left: 25.8rem; 
     right:auto;
-    }
-}
-.contact-button {
-    position: absolute;
-    bottom: 3rem;
-    right: 10rem;
-    padding: 1.7rem 8.4rem 1rem 8rem;
-    @include sp {
-      bottom: 2.3rem;
-      left: 25.8rem; /* 画面内に表示する */
-      right:auto;
     }
 }
     

@@ -1,7 +1,7 @@
 @use '../../foundation/variable' as *;
 @use '../../foundation/mixin' as *;
 
-.fv {
+.c-fv {
    width: 100%;
    height: auto;
    position: relative;
@@ -16,6 +16,16 @@
    @include sp {
       padding-top: 5rem;
    }
+   &::before {
+      content: ''; 
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(80, 80, 80, 0.49);
+      z-index: 1; // 画像の上に表示
+    }
    &__contents {
       width: 100%;
       height: 100%;
@@ -45,4 +55,3 @@
       }
    }
 }
-
