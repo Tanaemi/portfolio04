@@ -63,7 +63,7 @@ $(function() {
           {
               breakpoint: 768,
               settings: {
-                  slidesToShow: 1, // 375px以下では1つだけ表示
+                  slidesToShow: 1, 
                   centerMode: true,
                   centerPadding: "0px"
               }
@@ -203,4 +203,5 @@ function createPagination(currentPage, totalPages) {
     }
   });
 })();
+
 

@@ -51,6 +51,7 @@
       position: absolute;
       top: 48%;
       left: 28%;
+      z-index:33;
       @include sp {
         font-size: 3rem;
         font-weight: 700;

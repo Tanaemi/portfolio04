@@ -14,7 +14,7 @@
         padding-bottom: 3rem;
     }
     &__title_a {
-        margin-bottom: 2.5rem;
+        margin-bottom: 2.8rem;
         @include sp {
             margin-bottom: 3rem;
         }
@@ -168,18 +168,32 @@
             &.blank {
                 position:relative;
                 span.blank {
-                    display: inline-block;
-                    width: 3rem;
-                    height: 0.1rem;
-                    border-bottom: 1px solid #707070;
-                    position:absolute;
-                    top: 48%;
-                    left:55%;
-                    transform: translate(-50%, -50%);
+                    // display: inline-block;
+                    // width: 3rem;
+                    // height: 0.1rem;
+                    // border-bottom: 1px solid #707070;
+                    // position:absolute;
+                    // top: 50%;
+                    // left: 50%;
+                    // transform: translate(-50%, -50%);
                     // @include sp {
                     //     padding-bottom: 1rem;
                     //     padding-top:0;
-                    // }
+
+
+                    display: inline-block;
+                 width: 3rem;           // 横幅
+                 height: 0.2rem;        // 棒の太さ（高さ）
+                 background-color: #707070;  // 線の色（グレー）
+                 position: absolute;
+                 top: 50%;
+                 left: 50%;
+                 transform: translate(-50%, -50%); // 中央に配置
+                 border-radius: 0.1rem; // 少しだけ角を丸めてもOK（任意）
+                 @include sp {
+                    width: 2.4rem;       // スマホ時にやや短く調整
+                  }
+    
                 }
             }
         }
@@ -246,6 +260,8 @@
         
         .tr-first th {
             height: 3.3rem;
+            border-right: none;
+            border-left: none;
             @include sp {
                 height: 0;
                 padding: 0;
