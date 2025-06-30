@@ -114,6 +114,7 @@
             
         }
         li {
+            height: 5rem;
             display:flex;
             font-size: 1.6rem;
             line-height: calc(33 / 16);
@@ -148,6 +149,7 @@
         .contact {
             padding-left: 2rem; //contact
         }
+        
     }
     .global_nav_blog-detail.contact_form,
     .global_nav_blog-detail.contact_send,
@@ -173,8 +175,12 @@
         content:'';
     }
     .global_nav_blog-detail li a {
+        width:100%;
+        height:100%;
+        display:flex;
         text-decoration: none;
         color: #000000;
+        line-height:5rem;
         @include sp {
             align-items: center;
         }

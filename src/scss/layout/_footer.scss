@@ -4,7 +4,6 @@
 .footer {
     display:flex;
     width: 100%;
-    max-width:108rem;
     margin:0 auto;
     padding:0 2rem;
     height: auto;
@@ -156,7 +155,6 @@
     }
     
     &__sns {
-      margin: 0rem 0 5rem;
       ul {
           display:flex;
           justify-content: center;
