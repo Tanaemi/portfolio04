@@ -7,11 +7,11 @@
     display: grid;
     place-content: center;
     padding-top: 5.7rem;
-    padding-bottom: 3.85rem;
+    padding-bottom: 4.5rem;
     text-align: center;
     @include sp {
         padding-top: 3.5rem;
-        padding-bottom: 3rem;
+        padding-bottom: 4rem;
     }
     &__title_a {
         margin-bottom: 2.8rem;
@@ -35,7 +35,7 @@
         }
     }
     &__title_b {
-        margin-bottom: 3.5rem;
+        margin-bottom: 4rem;
         @include sp {
             margin-bottom: 0.8rem;
         }
@@ -91,8 +91,8 @@
     height: auto;
     display: grid;
     place-content: center;
-    padding-top: 1rem;
-    margin-bottom: 15.2rem;
+    // padding-top: 1rem;
+    margin-bottom: 12rem;
     text-align: center;
     @include sp {
         padding-top: 0rem;
@@ -146,6 +146,7 @@
                 height: 1.5rem;
                 background: #000000;
                 border-radius: 50%;
+                vertical-align: middle;
             }
             span.red {
                 display: inline-block;
@@ -153,6 +154,7 @@
                 height: 1.5rem;
                 background: $color-red;
                 border-radius: 50%;
+                vertical-align: middle;
             }
             &:empty { 
                 width: 3rem;
@@ -168,28 +170,15 @@
             &.blank {
                 position:relative;
                 span.blank {
-                    // display: inline-block;
-                    // width: 3rem;
-                    // height: 0.1rem;
-                    // border-bottom: 1px solid #707070;
-                    // position:absolute;
-                    // top: 50%;
-                    // left: 50%;
-                    // transform: translate(-50%, -50%);
-                    // @include sp {
-                    //     padding-bottom: 1rem;
-                    //     padding-top:0;
-
-
-                    display: inline-block;
+                 display: inline-block;
                  width: 3rem;           // 横幅
-                 height: 0.2rem;        // 棒の太さ（高さ）
+                 height: 0.1rem;        // 棒の太さ（高さ）
                  background-color: #707070;  // 線の色（グレー）
                  position: absolute;
-                 top: 50%;
+                 top: 47%;
                  left: 50%;
                  transform: translate(-50%, -50%); // 中央に配置
-                 border-radius: 0.1rem; // 少しだけ角を丸めてもOK（任意）
+                 border-radius: 0rem; // 少しだけ角を丸めてもOK（任意）
                  @include sp {
                     width: 2.4rem;       // スマホ時にやや短く調整
                   }
@@ -246,6 +235,11 @@
             span {
                 font-size: 1.7rem;
             }
+            @include sp {
+                font-size: 4vw; // 画面幅に比例して自動縮小
+                white-space: normal;
+                word-break: break-word;
+            }
             
         }
         .back-b {
@@ -255,11 +249,16 @@
             line-height: calc(25 / 20);
             font-weight: 700;
             text-align: center;
+            @include sp {
+                font-size: 4vw; // 画面幅に比例して自動縮小
+                white-space: normal;
+                word-break: break-word;
+            }
             
         }
         
         .tr-first th {
-            height: 3.3rem;
+            height: 3rem;
             border-right: none;
             border-left: none;
             @include sp {
@@ -323,7 +322,7 @@
             color: #000000;
             text-align: left;
             @include sp {
-                margin-bottom: 0rem;
+                margin-bottom: 6.7rem;
                 font-size: 1.6rem;
                 line-height: calc(30 / 16);
             }

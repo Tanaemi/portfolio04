@@ -156,26 +156,29 @@
         }
         .sns-item:first-child {
             margin-left:0;
+            
         }
         
         .sns-item {
             display: flex;
+            
         }
           
         .sns-link {
             display: flex;
             align-items: center;
             text-decoration: none;
-            padding: 1.1rem 1.7rem 0.8rem 1.2rem;
+            padding: 1rem 1.7rem 0.8rem 1.2rem;
             background-color: $color-main;
             transition: background-color 0.3s;
-            margin-right: 0.4rem;
+            margin-right: 0.3rem;
             @include sp {
                 margin-right: 0.2rem;
             }
         }
         .sns-link.facebook {
             background: #425893;
+            margin-right: 0.4rem;
         } 
         .sns-link.twitter {
             background: #4A9FEB;
@@ -198,7 +201,7 @@
         .sns-icon {
             width: 2.1rem;
             height: 2.1rem;
-            margin-right: 0.8rem;
+            margin-right: 0.9rem;
             @include sp {
                 margin-left: 0.8rem;
             }
@@ -211,7 +214,18 @@
                 display: none;
             }
         }
-         
+        .blog-detail {
+            transition: 0.3s ease-in-out;
+            &:hover {
+                opacity: 0.5;
+            }
+            &__middle {
+                font-size: 1.6rem;
+                font-weight: 700;
+                line-height: calc(25 / 16);
+                color: #000000;
+            }
+        }
 
         .blog-detail__gray-text {
             display: flex;
@@ -252,6 +266,13 @@
                     font-size: 1.8rem;
                     line-height: calc(30 / 18);
                     color: #000000;
+                    display: -webkit-box;		
+                    -webkit-box-orient: vertical;		
+                    overflow: hidden;		
+                    text-overflow: ellipsis;		
+                    -webkit-line-clamp: 3; // ← 表示したい行数に変更		
+                    line-height: 1.6; // 行間も調整可能（任意）		
+                    max-height: calc(1.6em * 3); // line-height × 行数（※バックアップ用）		
                     @include sp {
                         flex:1;
                         font-size: 1.6rem;
@@ -263,6 +284,7 @@
         }
         .text-link {
             margin-bottom: 5.2rem;
+            transition: 0.3s ease-in-out;
             @include sp {
                 margin-bottom: 4.4rem;
             }
@@ -272,6 +294,9 @@
                 font-weight: 700;
                 color: $color-red;
                 text-decoration: underline;
+            }
+            &:hover {
+                opacity:0.5;
             }
         }
         
@@ -390,14 +415,14 @@
                         @include sp {
                             padding-top: 1rem;
                             font-size: 1.7rem;
-                            line-height: calc(30 / 17);
+                            line-height: calc(28 / 17);
                             margin-bottom: 0rem;
                         }
                     }
                     &-date {
                         width:100%;
                         font-size: 1.7rem;
-                        line-height: calc(30 / 17);
+                        line-height: 1.7;
                         margin-bottom: 1.1rem;
                         margin-left: 0.5rem;
                         color: #000000;
@@ -410,6 +435,9 @@
                         font-size: 1.8rem;
                         line-height: calc(30 / 18);
                     }
+                }
+                &:hover {
+                    opacity: 0.5;
                 }
             }
         }
@@ -495,6 +523,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: 0.3s ease-in-out;
             p {
                 font-size: 1.8rem;
                 line-height:calc(33 / 18);
@@ -505,23 +534,45 @@
                 width:100%;
                 height:22.6rem;
             }
-            &_search {
-              width: 18rem;
-              height: 4rem; 
-              background: $color-bread; /* バナーの背景色（必要なら変更） */
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              position: relative;
-              bottom: 0;
-              right: 0;
-              flex-grow: 1;
-              @include sp {
-                width: 100%;
-                height: 5.4rem; 
-              }
+            
+            &:hover {
+                opacity: 0.5;
             }
+            
+            &_search {
+                width: 18rem;
+                height: 4rem; 
+                background: $color-bread;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                bottom: 0;
+                right: 0;
+                flex-grow: 1;
+                overflow: hidden;
+                @include sp {
+                    width: 100%;
+                    height: 5.4rem; 
+                }
+                textarea {
+                    font-size: 1.8rem;
+                    padding: 0.8rem;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    width: 100%;
+                    height: 100%;
+                    box-sizing: border-box;
+                    resize: none;
+                    line-height: 1.5;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                    resize: none;
+                }
+            }
+            
         }
+          
         .search-icon {
             width: 4rem;
             height: 4rem;
@@ -529,6 +580,7 @@
             justify-content: center;
             align-items: center;
             background: #000000;
+            transition: 0.3s ease-in-out;
             @include sp {
                 width: 7rem;
                 height: 5.4rem;  
@@ -540,6 +592,9 @@
                     width: 2.62rem; 
                     height: 3.10rem;  
                 } 
+            }
+            &:hover {
+                opacity: 0.5;
             }
         }
         .search_wrap {
@@ -558,6 +613,7 @@
             display:flex;
             column-gap: 1.5rem;
             margin-top: 1.6rem;
+            transition: 0.3s ease-in-out;
             @include sp {
                 margin-top: 2.1rem;
             }
@@ -578,12 +634,21 @@
             &__title {
                 width: 60%;
                 font-size: 1.7rem;
-                line-height: calc(28 / 17);
                 color: #000000;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 2; // ← 表示したい行数
+                line-height: calc(28 / 17); // 行間も調整可能（任意）
+                max-height: calc(1.6em * 2); // line-height × 行数（※バックアップ用）
                 @include sp {
                     padding-top: 0.8rem;
                     padding-left: 0.2rem
                 }
+            }
+            &:hover {
+                opacity: 0.5;
             }
         } 
         .category {
@@ -591,12 +656,9 @@
             height: auto;
             list-style: none;
             padding-left: 0;
+            
             @include sp {
                 margin-bottom: 19.7rem;
-            }
-            a {
-                display: inline-block;
-                color: #000000;
             }
             li {
                 font-size: 1.7rem;
@@ -604,11 +666,22 @@
                 border-bottom: 0.5px solid #000000;
                 margin: 1.2rem 0 1.95rem;
                 @include sp {
-                    padding: 1.2rem 0 0.65rem;
+                    // padding: 1.2rem 0 0.65rem;
+                    padding:0;
                     margin:0;
                 }
                 
             }
+            a {
+                display: block; // blockにしてli全体をクリック可能に
+                padding: 1.2rem 0 0.65rem; // パディングでクリック領域を広げる
+                color: #000000;
+                text-decoration: none; // 装飾を必要に応じて消す
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+            
         }                    
     }
 }

@@ -196,12 +196,12 @@ function createPagination(currentPage, totalPages) {
 
 
 
-(() => {
-  [...document.querySelectorAll('*')].forEach(el => {
-    if (el.scrollWidth > document.documentElement.clientWidth) {
-      el.style.outline = '2px solid magenta'; // はみ出し要素に枠線
-    }
-  });
-})();
+// (() => {
+//   [...document.querySelectorAll('*')].forEach(el => {
+//     if (el.scrollWidth > document.documentElement.clientWidth) {
+//       el.style.outline = '2px solid magenta'; // はみ出し要素に枠線
+//     }
+//   });
+// })();
 
 

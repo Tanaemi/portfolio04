@@ -27,7 +27,7 @@
         background: $color-red;
         border: 1px solid $color-red;
         color: $color-main;
-        position: absolute; 
+        position: sticky; 
         bottom: 0rem;
         left: 78rem;
         width: 30rem;
@@ -42,7 +42,7 @@
             padding: 1.4rem 8.8rem 1.1rem 8.8rem;
             position: absolute; 
             bottom: 0rem;
-            left: 0rem;
+            left: 2rem;
         }
         &:hover {
             background-color: $color-main;
@@ -71,7 +71,7 @@
     text-align: left;
     align-items: center;
     @include sp {
-        height: auto; 
+        height: 3.6rem; 
         padding-left: 0rem;
         
     }
@@ -180,7 +180,7 @@
         display:flex;
         text-decoration: none;
         color: #000000;
-        line-height:5rem;
+        line-height:calc(33 / 16);
         @include sp {
             align-items: center;
         }
@@ -189,52 +189,7 @@
     .global_nav_result-details li a:hover {
         text-decoration: underline;
     }
-
-    .global_nav_result-details{
-        display:flex;
-        list-style: none;
-        margin: 0;
-        padding-bottom: 0.7rem;
-        justify-content: flex-start;
-        align-items: center;
-        padding-left: 2rem; //contact
-        @include sp {
-            width:100%;
-            height: auto;
-            flex-wrap: wrap;
-            margin: 0rem;
-            padding-left: 0rem;
-        }
-        ol {
-            display: flex;
-            align-items: center;
-            @include sp {
-                padding: 0;
-                flex-wrap:wrap;
-            }
-        }
-        li {
-            margin: 0;
-            padding: 0.2rem 0.5rem; 
-            display:flex;
-            font-size: 1.6rem;
-            line-height: calc(33 / 16);
-            color: #000000;
-            text-decoration: none;
-            // padding-right: 0.5em;   //plan一致
-            justify-content: flex-start;
-            align-items: center;
-            padding-top: 1rem;    
-            @include sp {
-                width: auto;
-                font-size: 1.6rem;
-                line-height: calc(20 / 16);
-                flex-wrap: wrap; 
-                float: right;
-                padding-top: 0rem;
-            }
-        }
-    }
+   
     .global_nav_result-details li:after {
         content:'>';
         padding:0 1.5rem;

@@ -129,7 +129,7 @@
       .logo-svg.sp {
         @include sp {
           width: 2.03rem;
-          padding: 0.98rem 0 0.88rem;
+          // padding: 0.98rem 0 0.88rem;
         }
       }
       
@@ -328,5 +328,17 @@
 }
 .header__nav.active ul li:hover {
   background-color: #000000;
+}
+.logo-svg {
+  width: 33px;
+  height: auto;
+}
+
+/* 横幅1080pxのときにサイズを32x49.3に */
+@media (max-width: 1080px) {
+  .logo-svg {
+    width: 32px;
+    height: 49.3px;
+  }
 }
 
