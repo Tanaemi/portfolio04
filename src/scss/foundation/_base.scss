@@ -49,7 +49,7 @@ a {
 
 * {
   box-sizing:border-box;
-  outline: 2px solid blue;
+  // outline: 2px solid blue;
 }
 /* PC、SPの非表示 */
 @include sp {
@@ -149,10 +149,12 @@ img {
     a {
       align-items: center;
     }
+  }
+  &.plan {
+    padding: 0 1.7rem;
   } 
 }
 .sticky-container {
-
   position: relative;
   width: 100%;
   // max-width: 108rem;

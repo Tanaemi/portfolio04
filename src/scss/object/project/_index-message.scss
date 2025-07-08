@@ -75,7 +75,7 @@
             &:nth-child(1) {
                 margin-top: 2.9rem;
                 @include sp {
-                    margin-top: 3.4rem;
+                    margin-top: 3.8rem;
                 }
             }
             &:nth-child(2) {
@@ -213,9 +213,8 @@
     color: #fff;
     padding-top: 3.4rem;
     padding-bottom: 3rem;
-    
     @include sp {
-        padding-top: 3rem;
+        padding-top: 2.4rem !important;
         padding-bottom: 2rem;
     }
     .inner {
@@ -407,19 +406,21 @@
    /*スライダー*/
     .top-sec04-wrap {
       width:100%;
-      overflow: visible;
+    //   overflow: visible;
     }
     .test-slick {
       width: 100%;
-      max-width: 87rem;
+      max-width: 88rem;
       margin: 0 auto;
       display:flex;
+      gap:calc(880px - 270px*3/2);
       @include sp {
         width: 100% !important;
+        gap:0;
       }
     }
     .test-slick__item {
-        width: 27rem;
+        width: 30.7%;
         margin: 0 1.75rem;
         background-color: $color-red;
         flex-shrink: 0; 
@@ -435,12 +436,19 @@
           width:100%;
         }
         & > a {
+            width:27rem;
             display: flex;
             flex-direction: column;
             align-items: stretch;
-            width: 100%;
             height: auto; // 高さを中身に合わせる
             text-decoration: none; // 装飾を消したければ
+            @include sp {
+                width: 100%;
+                max-width: 33.5rem;
+                aspect-ratio: 33.5, 200;
+                object-fit: cover; 
+                align-items: center;
+            }
         }
         &:first-child {
             margin-left:0;
@@ -455,7 +463,7 @@
           margin-top: 1.6rem;
         //   margin-left: 1.2rem;
           @include sp {
-            margin-top: 3rem;
+            margin-top: 2.7rem;
             margin-left: 0.2rem;
           }
         }
@@ -471,14 +479,14 @@
           @include sp {
             white-space: normal;
             align-items: flex-start;
-            padding:0 2rem;
+            // padding:0 2rem;
           }
         }
-        & a {
-            display: block;
-            width: 105%;
-            height: 100%;
-        }
+        // & a {
+        //     display: block;
+        //     width: 100%;
+        //     height: 100%;
+        // }
           
     }
    
@@ -488,20 +496,37 @@
     }
     .slick-slide {
         width:100%;
+        margin-right: 0rem;
         .img-slick {
-             width: 27rem;
+            width:100%;
+            margin: 0 auto;
             @include sp {
                 width: 100%;
                 height: auto;
                 max-width: 33.5rem;
-                aspect-ratio: 335/200;
+                // aspect-ratio: 335/200;
                 margin-right: 0rem;
             }
+            & img {
+                display:block;
+                width: 27rem;
+                height: auto;
+                margin-left:0;
+                padding-left:0;
+                @include sp {
+                    width: 100%;
+                    height: 20rem;
+                    max-width: 33.5rem;
+                    // aspect-ratio: 335/200;
+                    margin-right: 0rem;
+                }
+            }
+        }
+        .img-slick picture {
+            display: block;
         }
     }
-    .slick-track {
-        display:flex;
-    }
+    
     .slick-slider {
         @include sp {
             overflow-x: hidden;
@@ -524,6 +549,7 @@
         }
     }
     .slick-next:before{
+        content: ""!important;
         background: url(../img/arrow-r.png)!important;
         background-size: contain!important;
         position: absolute;
@@ -535,11 +561,12 @@
         }
     }
     .slick-prev:before {
+        content: ""!important;
         background: url(../img/arrow-l.png)!important;
         background-size: contain!important;
         position: absolute;
         top: -4.5rem;
-        left: -1.6rem; //←
+        left: -1.6rem; 
         @include sp {
             top: -3.8rem;
             left: 4.8rem;
@@ -551,18 +578,14 @@
         height:2.727rem!important;
     }
     
-    .slick-prev {
-        left: -3rem!important;
-    }
+    // .slick-prev {
+    //     left: -3rem!important;
+    // }
     .test-container {
         overflow-x: hidden;
         width: 100%;
     }
-    .img-slick img {
-        display:block;
-        width: 100%;
-        height: auto;
-    }
+    
 }
 
 .top-sec05 {
@@ -571,13 +594,14 @@
     padding-top: 5.4rem;
     padding-bottom: 1rem;
     @include sp {
-        padding-top: 4.6rem;
+        padding-top: 4rem;
         padding-bottom: 0rem;
     }
    
     &__wrap {
         width: 100%;
         display: flex;
+        
     }
     &__step-circle{
         width: 3.59%;
@@ -586,6 +610,8 @@
         padding-top: 12px;
         @include sp {
             width: 4.8rem;
+            padding-right: 1rem;
+            padding-left: 0rem;
         }
         span {
             width:2rem;
@@ -621,6 +647,7 @@
         margin-left: 4.3rem;
         @include sp {
             line-height: 1;
+            margin-left: 0rem;
             // margin-left: 2.19rem;
         }
     }
@@ -655,13 +682,13 @@
         &:nth-of-type(1) {
             margin-bottom: 5.6rem;
             @include sp {
-              margin-bottom: 4rem;
+              margin-bottom: 3rem;
             }
         }
         &:nth-of-type(2) {
            margin-bottom: 5.6rem;
            @include sp {
-            margin-bottom: 4.2rem;
+            margin-bottom: 3.2rem;
           }
         }
         &:nth-of-type(3) {
@@ -669,7 +696,7 @@
             @include sp {
             margin-bottom: 2.4rem;
             margin-top: 1rem;
-            margin-bottom: 3.8rem;
+            margin-bottom: 3.2rem;
             }
         } 
         span {
@@ -684,7 +711,7 @@
                 // margin-right:5.3rem;
                   @include sp {
                     margin-top: 0rem;
-                    margin-left: 3rem; 
+                    margin-left: 1rem; 
                   }
                 &::before {
                     content: '';
@@ -743,6 +770,10 @@
             margin: 0 8.4px;
             border-radius: 9999px;
             background-color: $color-red;
+            @include sp {
+                margin: 0 8.4px 0 8.4px;
+                height: 12.3rem;
+            }
         }
           
         .arrow-2::before,
@@ -784,7 +815,7 @@
     }
     .accordion {
         width:88rem;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 0.05rem solid #000000;
         @include sp {
             width: 100%;
             // padding: 0 2rem;
@@ -794,21 +825,24 @@
     .question {
         display: flex;
         background: #fff;
-        padding: 1.5rem 1.5rem 1.4rem 1.9rem;
+        padding: 1.5rem 1.5rem 1rem 0rem;
         cursor: pointer;
         font-size: 1.7rem;
         line-height: calc(30 / 17);
         color: #000000;
         text-align: left;
         position: relative;
+        border-top: 0.05rem solid #000000;
+        flex-wrap:wrap;
+
         @include sp {
             width:100%;
             font-size: 1.6rem;
             line-height: calc(30 / 16);
-            padding: 0;
+            padding-right: 5rem; // crossBar分のスペース
         }
-        &:first-child {
-            border-top: 1px solid #ddd; 
+        &:last-child {
+            border-top: 0.5px solid #000000; 
         }
         
         span {
@@ -830,16 +864,22 @@
             }
         }
         h3 {
+            flex:1;
             font-size: 1.7rem;
             color: #000;
             padding-left: 0.4rem;
+            padding-right: 4rem; // crossBarとの余白
+            flex: 1;
+            min-width: 0; // 長文でも折り返しOKにする
+            word-break: break-word; // 長すぎる単語も折り返す
+            
             @include sp {
                 font-size: 1.6rem;
                 line-height: calc(30 / 16);
-                padding-right: 5rem;
+                padding-right: 0rem;
                 padding-left: 2.1rem;
-                padding-top: 1.6rem;
-                padding-bottom: 1rem;
+                padding-top: 0rem;
+                padding-bottom: 0rem;
                 flex:1;
             }
         }
@@ -847,11 +887,12 @@
             width: 1.4rem;
             height: 1.4rem;
             position: absolute;
-            top: 59%;
-            right: 3.1rem;
+            top: 50%;
+            right: 1.7rem;
             transform: translateY(-50%);
             @include sp {
-                right: 1.7rem;
+                right: 1.5rem;
+                
             }
         }
         .crossBar::before, .crossBar::after {
@@ -893,7 +934,7 @@
             width: 1.4rem;
             height: 1.4rem;
             position: absolute;
-            top: 59%;
+            top: 48%;
             right: 3.1rem;
             transform: translateY(-50%);
             @include sp {
@@ -936,6 +977,7 @@
     }
     .answer {
         display: none;
+        flex-wrap: nowrap;
         flex-direction: row;
         padding: 1.5rem;
         background: #fff;
@@ -944,7 +986,7 @@
         font-weight: 700;
         line-height: calc(30 / 17);
         color: $color-red;
-        border-top: 0.05rem solid #000000;
+        border-bottom: 0.05rem solid #000000;
         span {
             width: 3.5rem;
             height: 3.5rem;
@@ -957,6 +999,7 @@
             text-align: center;
             margin-top:1rem;
             margin-right:1rem;
+            flex-shrink: 0;
             @include sp {
                 width:3.5rem;
                 height:3.5rem;
@@ -965,6 +1008,7 @@
         h3 {
             font-size: 1.7rem;
             color: $color-red;
+            word-break: break-word;
             @include sp {
                 // margin-left: 1.1rem;
                 // padding-right: 2rem;

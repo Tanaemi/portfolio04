@@ -48,11 +48,12 @@
         align-items: flex-start;
         margin-bottom: 0rem;
       }
+      
       &-checkbox {
         width: 100%;
         display:flex;
         // align-items: left;
-        margin-bottom: 1.9rem;
+        margin-bottom: 1.8rem;
         @include sp {
           flex-direction: column;
           align-items: flex-start;
@@ -84,6 +85,10 @@
           margin-top: 0rem;
         }
       }
+      
+    }
+    .form-flex.is-last-form-flex {
+      margin-bottom: 2.6rem;
     }
     
     dl dt,
@@ -99,7 +104,9 @@
         font-size: 1.6rem;
         line-height: calc(33 / 16);
       }
-  
+      dt.purpose {
+        margin-top:0.4rem;
+      }
       label {
         font-size: 2.0rem;
         line-height: calc(33 / 20);
@@ -126,11 +133,7 @@
         }
       }
     } 
-    // dl {
-    //   @include sp {
-    //     margin-top:0;
-    //   }
-    // }
+    
     dt,dd {
       @include sp {
         width:100%;
@@ -167,100 +170,61 @@
         line-height: calc(25 / 15);
       }
     }
-    input[type=checkbox] {
-      display: none;
-    }
-      
+    
     .checkbox01 {
-      font-size: 1.8rem;
-      box-sizing: border-box;
-      cursor: pointer;
-      display: inline-block;
-      padding: 0rem 0.4rem 1.1rem 7rem;
       position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
-      // flex-wrap: wrap;
-      // display: flex;
+      padding-left: 4rem; // チェックボックスの幅分
+      cursor: pointer;
+      font-size: 1.8rem;
+      display: flex;
       align-items: center;
-      // width :fit-content;
-      @include sp {
-        font-size: 1.6rem;
-        padding: 0rem 0.4rem 1.4rem 2.9rem;
+      margin-left: 2.9rem;
+      margin-bottom: 1.2rem;
+      input[type="checkbox"] {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        opacity: 0;
+        z-index: 2;
+        cursor: pointer;
       }
-    }
-      
-    .checkbox {
-      padding-bottom: 5rem;
-      @include sp {
-        width:100%;
-        display:flex;
-        align-items:flex-start;
-        margin-bottom: 1.9rem;
-        @include sp {
-          margin-bottom: -1.1rem;
-        }
+    
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        border: 0.5px solid #000000;
       }
-    }
-      
-    .checkbox01::before {
-      background: #fff;
-      content: '';
-      display: block;
-      width: 2rem;
-      height: 2rem;
-      left: 0.2rem;
-      margin-top: -0.8rem;
-      position: absolute;
-      top: 24%;
-      left: 9%;
-      border: 0.5px solid #000000;
-      @include sp {
-        margin-left:2rem;
-        left: -6%;
-        margin-top: -0.7rem;
+    
+      span::after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        width: 6px;
+        height: 12px;
+        border-right: 2px solid #000;
+        border-bottom: 2px solid #000;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
       }
-    }
-      
-    .checkbox01::after {
-      border-right: 0.5px solid #000000;
-      border-bottom: 0.5px solid #000000;
-      content: '';
-      display: block;
-      height: 0.9rem;
-      margin-top: -0.7rem;
-      opacity: 0;
-      position: absolute;
-      top: 50%;
-      left: -40%;
-      transform: rotate(45deg);
-      width: 0.5rem;
-    }
-      
-    input[type=checkbox]:checked + .checkbox01::after {
+    
+      input[type="checkbox"]:checked + span::after {
         opacity: 1;
+      }
     }
-      
-    .checkbox-container {
-        display: flex;
-        flex-wrap: wrap;
-        /* 要素を折り返すように設定 */
-        justify-content: space-between;
-        /* 均等に要素間を広げる */
-        gap: 1rem;
-        /* 要素間の間隔を調整 */
-    }
-      
-    .checkbox__wrap {
-        width:100%;
-        flex-direction: column;
-        display: flex;
-        // row-gap: 0.7rem;
-        // padding-bottom: 4.4rem;
-    }
-
-    
   
-}
+    .checkbox01 input[type="checkbox"]:checked + span::after {
+      opacity: 1;
+    }
     
+}

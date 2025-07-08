@@ -98,12 +98,12 @@
         text-decoration: none;
         display: flex;
         justify-content: center;
-        margin-top: 4.5rem;
+        margin-top: 5rem;
         margin-bottom: 10rem;
         @include sp {
             width:100%;
             margin-top: 5rem;
-            margin-bottom: 11rem;
+            margin-bottom: 10rem;
             font-size: 2rem;
         }
     }
@@ -214,6 +214,8 @@
                 padding: 1.1rem 2.98rem 0.6rem 3rem;
                 font-size: 1.8rem;
                 margin-bottom: 2rem;
+                text-align: center;
+                justify-content: center;
             }
         }
     }
@@ -248,8 +250,8 @@
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     @include sp {
-        bottom: 7.9rem;
-        right: -26.8rem; 
+        // bottom: 8.6rem;
+        right: -28.8rem; 
     }
     &.active {
         opacity: 1;
