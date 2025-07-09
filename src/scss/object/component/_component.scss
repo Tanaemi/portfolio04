@@ -2,28 +2,90 @@
 @use '../../foundation/mixin' as *;
 
 //フッター上のお問い合わせボタン
+// .sticky {
+//     width: 100%;
+//     height: auto;
+//     position: sticky; 
+//     bottom: 0;
+//     right: 0rem;
+//     display: flex;
+//     justify-content: flex-end;
+//     z-index:1000;
+//     .contact-button {
+//         display: inline-block;  
+//         font-size: 2rem;
+//         font-weight: 700;
+//         line-height: calc(33 / 20);
+//         cursor: pointer;
+//         vertical-align: middle;
+//         padding: 1.7rem 8.4rem 1rem 8rem;
+//         background: $color-red;
+//         border: 1px solid $color-red;
+//         color: $color-main;
+//         position: sticky; 
+//         bottom: 0rem;
+//         right: 0rem;
+//         width: 30rem;
+//         height: 6rem;
+//         text-align: center;
+//         letter-spacing: 0.2rem;
+//         justify-content: flex-end;
+//         transition: 0.4s ease-in-out;
+//         box-sizing: border-box;
+//         margin-left: auto;
+//         @include sp {
+//             width: 33.5rem;
+//             height: 6rem;
+//             padding: 1.4rem 8.8rem 1.1rem 8.8rem;
+//             position: absolute; 
+//             bottom: 0rem;
+//             left: 2rem;
+//         }
+//         &:hover {
+//             background-color: $color-main;
+//             color: $color-red;
+//         }
+//     }
+    
+//     &__inner {
+//         max-width: 88rem;
+//     }
+// }
+
+// /* stickyを適用しない要素 */
+// .contents {
+//     position: relative;
+//     width: 100%;
+//     height: 8rem;
+//     background: lightcoral;
+// }
+
+
+
+//new
 .sticky {
-    // position: sticky; 
-    // bottom: 0rem;
-    // right: 0rem;
-    // width: 33.5rem;
-    // height: 6rem;
-    // height: auto;
-    // text-align: right;
-    // z-index:888;
-    // @include sp {
-    //     bottom: 0rem;
-    //     left: 5%;
-    //     // text-align: center;
-    // }
+    position: sticky; 
+    bottom: 0rem;
+    left: 0rem;
+    width: 30rem;
+    height: 6rem;
+    width: 100%;
+    height: auto;
+    text-align: right;
+    // position:relative;
+    z-index:888;
+    @include sp {
+        bottom: 0rem;
+        left: 5%;
+        // text-align: center;
+    }
     
     .contact-button {
         font-size: 2rem;
-        font-weight: 700;
         line-height: calc(33 / 20);
         cursor: pointer;
         vertical-align: middle;
-        padding: 1.7rem 8.4rem 1rem 8rem;
+        padding: 1.7rem 7rem 1rem 7rem;
         background: $color-red;
         border: 1px solid $color-red;
         color: $color-main;
@@ -34,22 +96,16 @@
         height: 6rem;
         text-align: center;
         letter-spacing: 0.2rem;
-        justify-content: flex-end;
-        transition: 0.4s ease-in-out;
         @include sp {
             width: 33.5rem;
             height: 6rem;
             padding: 1.4rem 8.8rem 1.1rem 8.8rem;
-            position: absolute; 
-            bottom: 0rem;
-            left: 2rem;
+            right: 2rem;
         }
         &:hover {
-            background-color: $color-main;
-            color: $color-red;
+            opacity: 0.8;
         }
     }
-    
     &__inner {
         max-width: 88rem;
     }
@@ -63,15 +119,14 @@
     background: lightcoral;
 }
 
-
 #global_nav-breadcrumbs {
     width: 100%;
     height: auto;
     background: #E8E8E8;
     text-align: left;
-    align-items: center;
+    // align-items: center;
     @include sp {
-        height: 3.6rem; 
+        // height: 3.6rem; 
         padding-left: 0rem;
         
     }
@@ -84,10 +139,10 @@
         align-items: center;
         @include sp {
             width:100%;
-            height: auto;
+            // height: auto;
             flex-wrap: wrap;
-            margin: 0rem;
-            padding: 0rem 0rem;
+            // margin: 0rem;
+            // padding: 0rem 0rem;
         }
         ol {
             display: flex;
@@ -99,42 +154,64 @@
             }
             &.detail {
                 li {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.6rem;
+                    line-height: calc(33 / 16);
+                    padding: 0.15rem 0rem 0.15rem 0;
+                    position: relative;
                     @include sp {
                         width: auto;
                         margin-right:0rem;
                         font-size: 1.6rem;
-                        // line-height: 1.4;//sp行間ずれ
-                        padding: 0;
-                        flex-wrap: wrap; 
-                        float: right;
-                        align-items: flex-end;
+                        padding-top: 0.15rem;
                     }
+                    &::after {
+                        content: '>';
+                        margin-left: 0.6rem;
+                        font-size: 1.4rem;
+                        display: inline-block;
+                        color: #000;
+                        // Flexboxの折り返し防止
+                        // flex-shrink: 0;
+                        align-self: center;
+                      }
+                  
+                      &:last-child::after {
+                        content: '';
+                      }
+                  
+                      a {
+                        display: inline-flex;
+                        align-items: center;
+                      }
                 }
             }
-            
         }
-        li {
-            height: 5rem;
-            display:flex;
-            font-size: 1.6rem;
-            line-height: calc(33 / 16);
-            color: #000000;
-            text-decoration: none;
-            padding-right: 0.5em;   //plan一致
-            justify-content: flex-start;
-            align-items: center;
-            padding: 0.85rem 0;    
-            @include sp {
-                width: auto;
-                margin-right:1rem;
-                font-size: 1.6rem;
-                // line-height: calc(33/16);
-                margin: 0.14rem 0;
-                flex-wrap: wrap; 
-                float: right;
-            }
             
-        }
+        //下記liはplanでは不要
+        // li {
+        //     height: auto;
+        //     display:flex;
+        //     font-size: 1.6rem;
+        //     line-height: calc(33 / 16);
+        //     color: #000000;
+        //     text-decoration: none;
+        //     padding: 0.15rem 0rem;   //plan一致
+        //     justify-content: flex-start;
+        //     align-items: center;
+        //     @include sp {
+        //         width: auto;
+        //         margin-right:1rem;
+        //         font-size: 1.6rem;
+        //         // line-height: calc(33/16);
+        //         margin: 0.15rem 0;
+        //         // flex-wrap: wrap; 
+        //         float: right;
+        //     }
+            
+            
+        // }
         .line2 {
             @include sp {
                 width: 100%;

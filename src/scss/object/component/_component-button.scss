@@ -234,18 +234,82 @@
 }
 
 //TOP戻るボタン
+// .top-back-btn__icon {
+//     // width: 6.8rem;
+//     // height: 6.8rem;
+//     // background: #505050 50.2%; 
+//     // border-radius: 50%;
+//     // position: absolute;
+//     // bottom: 5.8rem;
+//     // right: -91.2rem;
+//     // z-index: 88;
+//     // display: flex;
+//     // align-items: center;
+//     // justify-content: center;
+//     // opacity: 0;
+//     // visibility: hidden;
+//     // transition: opacity 0.3s ease, visibility 0.3s ease;
+//     @include sp {
+//         // bottom: 8.6rem;
+//         right: -28.8rem; 
+//     }
+//     &.active {
+//         opacity: 1;
+//         visibility: visible;
+//     }
+//     &.active:hover {
+//         opacity: 0.5;
+//     }
+//     &.result {
+//         position: absolute;
+//         bottom: 9rem;
+//         right: 12rem;
+//         @include sp {
+//             position: absolute;
+//             bottom: 7.6rem;
+//             right: -3.6rem;
+//         }
+//     }
+//     &.result-list__icon {
+//         position: absolute;
+//         bottom: 9rem;
+//         left: 66.4rem;
+//         @include sp {
+//             position: absolute;
+//             bottom: 7.6rem;
+//             right: -3.6rem;
+//         }
+//     }
+//     &.result-details__icon {
+//         position: absolute;
+//         bottom: 9rem;
+//         right: -68rem;
+//         @include sp {
+//             position: absolute;
+//             bottom: 7.6rem;
+//             right: -3.6rem;
+//         }
+//     }
+   
+//     .arrow {
+//         transform: rotate(180deg); /* 上向き */
+//     }
+// }
+
+
 .top-back-btn__icon {
     width: 6.8rem;
     height: 6.8rem;
     background: #505050 50.2%; 
     border-radius: 50%;
+    // position: relative; 
     position: absolute;
     bottom: 8.8rem;
-    right: -91.2rem;
-    z-index: 88;
+    right: 9.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 88;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -259,60 +323,6 @@
     }
     &.active:hover {
         opacity: 0.5;
-    }
-    &.result {
-        position: absolute;
-        bottom: 9rem;
-        right: 12rem;
-        @include sp {
-            position: absolute;
-            bottom: 7.6rem;
-            right: -3.6rem;
-        }
-    }
-    &.result-list__icon {
-        position: absolute;
-        bottom: 9rem;
-        left: 66.4rem;
-        @include sp {
-            position: absolute;
-            bottom: 7.6rem;
-            right: -3.6rem;
-        }
-    }
-    &.result-details__icon {
-        position: absolute;
-        bottom: 9rem;
-        right: -68rem;
-        @include sp {
-            position: absolute;
-            bottom: 7.6rem;
-            right: -3.6rem;
-        }
-    }
-   
-    .arrow {
-        transform: rotate(180deg); /* 上向き */
-    }
-}
-
-
-.top-back-btn__icon {
-    width: 6.8rem;
-    height: 6.8rem;
-    background: #505050 50.2%; 
-    border-radius: 50%;
-    position: relative; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 88;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    &.active {
-        opacity: 1;
-        visibility: visible;
     }
     &.result {
         position: absolute;

@@ -117,6 +117,9 @@
     display: flex;
     cursor: pointer;
     transition: opacity 0.3s ease;
+    align-items: center; // ← 垂直中央揃え
+    justify-content: center; // ← 中央配置
+    height: 100%; // ← 親の高さに合わせる
     &:hover {
       opacity: 0.4;
     } 
@@ -129,8 +132,13 @@
       .logo-svg.sp {
         @include sp {
           width: 2.03rem;
+          padding-top: 0;
           // padding: 0.98rem 0 0.88rem;
         }
+      }
+      .logo-svg.pc {
+        width: 3.2rem;
+        padding-top: 0; // ← これをリセット
       }
       
     }
