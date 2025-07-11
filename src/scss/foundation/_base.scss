@@ -49,6 +49,7 @@ a {
 
 * {
   box-sizing:border-box;
+  
   // outline: 2px solid blue;
 }
 /* PC、SPの非表示 */
@@ -154,19 +155,6 @@ img {
     padding: 0 1.7rem;
   } 
 }
-.sticky-container {
-  position: relative;
-  width: 100%;
-  // max-width: 108rem;
-  height: auto;
-  margin: 0 auto;
-  // padding: 0 2rem;
-  
-  @include sp {
-    max-width: 76.7rem;
-  }
-  
-}
 
 $red : #dc143c;
 
@@ -187,8 +175,9 @@ $red : #dc143c;
     background: rgba($red, 0.2);
   }
 }
-body {
-  @include sp {
-    overflow-x: hidden;
-  }
-}
+
+// body {
+//   @include sp {
+//     overflow-x: hidden;
+//   }
+// }
