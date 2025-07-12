@@ -49,8 +49,7 @@ a {
 
 * {
   box-sizing:border-box;
-  
-  // outline: 2px solid blue;
+  outline: 2px solid blue;
 }
 /* PC、SPの非表示 */
 @include sp {
@@ -176,8 +175,3 @@ $red : #dc143c;
   }
 }
 
-// body {
-//   @include sp {
-//     overflow-x: hidden;
-//   }
-// }

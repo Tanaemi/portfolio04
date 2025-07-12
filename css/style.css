@@ -47,6 +47,7 @@ a {
 
 * {
   box-sizing: border-box;
+  outline: 2px solid blue;
 }
 
 /* PC、SPの非表示 */
@@ -2597,8 +2598,7 @@ th {
   width: 100%;
   max-width: 88rem;
   margin: 0 auto;
-  display: flex;
-  gap: 475px;
+  justify-content: space-between;
 }
 @media (max-width: 767px) {
   .top-sec04 .test-slick {
@@ -2607,17 +2607,17 @@ th {
   }
 }
 .top-sec04 .test-slick__item {
-  width: 30.7%;
-  margin: 0 1.75rem;
+  width: 27rem !important;
   background-color: #CB0000;
   flex-shrink: 0;
+  margin-left: 2.4rem;
 }
 @media (max-width: 767px) {
   .top-sec04 .test-slick__item {
     display: flex;
     flex-direction: column;
     margin-right: 0;
-    margin-left: 0;
+    margin-left: 0rem;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -2676,12 +2676,11 @@ th {
     align-items: flex-start;
   }
 }
-.top-sec04 .slick-track {
-  display: flex;
+.top-sec04 .test-slick .slick-slide {
+  margin-right: 0 !important;
 }
 .top-sec04 .slick-slide {
   width: 100%;
-  margin-right: 0rem;
 }
 .top-sec04 .slick-slide .img-slick {
   width: 100%;
@@ -2733,13 +2732,17 @@ th {
     left: 5.5rem;
   }
 }
+.top-sec04 .slick-prev {
+  width: 4rem;
+  height: 4rem;
+}
 .top-sec04 .slick-next:before {
   content: "" !important;
   background: url(../img/arrow-r.png) !important;
   background-size: contain !important;
   position: absolute;
-  top: -5.8rem;
-  left: -1rem;
+  top: -4.7rem;
+  left: 1rem;
 }
 @media (max-width: 767px) {
   .top-sec04 .slick-next:before {
@@ -2752,8 +2755,8 @@ th {
   background: url(../img/arrow-l.png) !important;
   background-size: contain !important;
   position: absolute;
-  top: -4.5rem;
-  left: -1.6rem;
+  top: -3.2rem;
+  left: -2rem;
 }
 @media (max-width: 767px) {
   .top-sec04 .slick-prev:before {
@@ -2762,13 +2765,18 @@ th {
   }
 }
 .top-sec04 .slick-arrow {
-  z-index: 10 !important;
-  width: 2rem !important;
-  height: 2.727rem !important;
+  z-index: 10;
+  width: 2rem;
+  height: 2.727rem;
+  display: none;
 }
 .top-sec04 .test-container {
   overflow-x: hidden;
   width: 100%;
+}
+
+.test-slick .slick-slide {
+  margin-right: 0 !important;
 }
 
 .top-sec05 {
