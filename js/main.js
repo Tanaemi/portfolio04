@@ -54,58 +54,56 @@ $(function() {
   
 
   //音楽スクールスライダー
-  $(function () {
-    $(".test-slick").slick({
-        autoplay: true, 
-        slidesToShow: 3,
-        arrows: true,
-        responsive: [
-          {
-              breakpoint: 768,
-              settings: {
-                  slidesToShow: 1, 
-                  centerMode: true,
-                  centerPadding: "0px"
-              }
-          }
-        ]
-    });
-  });
-
   // $(function () {
   //   $(".test-slick").slick({
-  //       autoplay: true,
-  //       dots: true,
-  //       centerMode: true,
-  //       centerPadding: "15%",
+  //       autoplay: true, 
   //       slidesToShow: 3,
+  //       arrows: true,
   //       responsive: [
-  //           {
-  //           breakpoint: 768,
-  //               settings: {
-  //                   slidesToShow: 2,
-  //                   centerPadding: "13%",
-  //               },
-  //           },
-  //           {
-  //           breakpoint: 640,
-  //               settings: {
-  //                   arrows: false,
-  //                   slidesToShow: 1,
-  //                   centerPadding: "10%",
-  //               },
-  //           },
-  //           {
-  //           breakpoint: 375,
-  //               settings: {
-  //                   arrows: false,
-  //                   slidesToShow: 1,
-  //                   centerMode: false,
-  //               },
-  //           },
-  //       ],
+  //         {
+  //             breakpoint: 768,
+  //             settings: {
+  //                 slidesToShow: 1, 
+  //                 centerMode: true,
+  //                 centerPadding: "0px"
+  //             }
+  //         }
+  //       ]
   //   });
   // });
+
+  $(function () {
+    $(".test-slick").slick({
+        autoplay: true,
+        // dots: true,
+        centerMode: false,
+        slidesToShow: 3,
+        responsive: [
+            {
+            breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+            breakpoint: 640,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    centerPadding: "10%",
+                },
+            },
+            {
+            breakpoint: 375,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    centerMode: false,
+                },
+            },
+        ],
+    });
+  });
     
   
   //AOS
@@ -194,14 +192,11 @@ function createPagination(currentPage, totalPages) {
  }
 });
 
-
-
-// (() => {
-//   [...document.querySelectorAll('*')].forEach(el => {
-//     if (el.scrollWidth > document.documentElement.clientWidth) {
-//       el.style.outline = '2px solid magenta'; // はみ出し要素に枠線
-//     }
-//   });
-// })();
-
-
+//スムーススクロール
+$('a[href^="#"]').click(function(){
+  var href= $(this).attr("href");
+  var target = $(href == "#" || href == "" ? 'html' : href);
+  var position = target.offset().top;
+  $("html, body").animate({scrollTop:position}, 1000, "swing");
+  return false;
+});
