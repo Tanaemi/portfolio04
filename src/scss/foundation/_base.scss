@@ -31,12 +31,12 @@ body {
   letter-spacing: 0;
   @include sp {
     font-size: 1.4rem;
-    overflow-x: hidden;
+    // overflow-x: hidden;
   }
 }
 
 html, body {
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 p,h1,h2,h3,h4,a{
@@ -49,7 +49,8 @@ a {
 
 * {
   box-sizing:border-box;
-  outline: 2px solid blue;
+  // outline: 2px solid blue;
+  
 }
 /* PC、SPの非表示 */
 @include sp {
@@ -108,7 +109,8 @@ img {
     }
   }
   
-  &_top-sec04 {
+  .top-sec04 {
+    
     @include sp {
       padding: 0;
       margin: 0;
