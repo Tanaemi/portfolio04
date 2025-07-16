@@ -151,7 +151,7 @@
         }
         
     }
-   
+    
     .arrow {
         position: absolute;
         top: 0;
@@ -167,10 +167,10 @@
         &::before {
           content: "";
           position: absolute;
-          top: -1%;
+          top: 0%;
           left: 50%;
-          width: 3px;
-          height: 22.2px;
+          width: 2px;
+          height: 24.2px;
           border-radius: 9999px;
           background-color: $color-red;
           transform-origin: 50% 1.5px;
@@ -178,10 +178,10 @@
         &::after {
             content: "";
             position: absolute;
-            top: -2%;
+            top: -1%;
             left: 50%;
-            width: 3px;
-            height: 22.2px;
+            width: 2px;
+            height: 24.2px;
             border-radius: 9999px;
             background-color: $color-red;
             transform-origin: 50% 1.5px;
@@ -189,10 +189,16 @@
       
         &::before {
           transform: rotate(48.15deg) translateX(-50%);
+          @include sp {
+            transform: rotate(43.15deg) translateX(-50%);
+          }
         }
       
         &::after {
           transform: rotate(-48.15deg) translateX(-50%);
+          @include sp {
+            transform: rotate(-43.15deg) translateX(-50%);
+          }
         }
     }
 }
@@ -337,7 +343,7 @@
                     line-height: calc(30 / 20);
                     margin-bottom: 1.9rem;
                     padding-left: 0rem;
-                    padding-bottom: 0.7rem;
+                    padding-bottom: 0.8rem;
                 }
             }
         }
@@ -345,6 +351,7 @@
             margin-top: 1rem;
             @include sp {
                 margin-top: 0rem;
+                margin-bottom: 3.9rem;
             }
             p {
                 font-size: 1.8rem;
@@ -356,7 +363,6 @@
                  font-size: 1.6rem;
                  line-height: calc(30 /16);
                  margin-top: 0rem;
-                 margin-bottom: 3.9rem;
                  padding-left: 0rem;
                 }
             }
@@ -367,6 +373,7 @@
             margin-top: 0rem;
             @include sp {
                 margin-top: -0.3rem;
+                margin-bottom: 3.9rem;
             }
             p {
                 font-size: 1.8rem;
@@ -378,7 +385,6 @@
                  font-size: 1.6rem;
                  line-height: calc(30 /16);
                  margin-top: 0rem;
-                 margin-bottom: 3.9rem;
                  padding-left: 0rem;
                 }
             }
@@ -392,7 +398,7 @@
     height: auto;
     background: $color-red;
     color: #fff;
-    padding-top: 6.4rem;
+    padding-top: 6.3rem;
     padding-bottom: 5.7rem;
     @include sp {
         padding-top: 4.6rem;
@@ -405,134 +411,117 @@
 
    /*スライダー*/
     .top-sec04-wrap {
-      width:100%;
-     
+        width: 100%;
+        max-width: 88rem;
+        margin: 0 auto;
+        @include sp {
+            max-width: 100%;
+        }
     }
     .test-slick {
-      width: 100%;
-      max-width: 88rem;
-      margin: 0 auto;
-      justify-content: space-between;
-      @include sp {
-        width: 100% !important;
-        gap:0;
-      }
-    }
-    .test-slick__item {
-        width: 27rem!important; 
-        background-color: $color-red;
-        flex-shrink: 0; 
-        margin-left: 2.4rem;//←ここを調整して真ん中表示させた
+        // display: flex;
+        // flex-wrap: nowrap;
+        width: 100%;
+        max-width: 88rem;
+        margin: 0 auto;
+        // gap は使わない！
         @include sp {
-          display: flex;
-          flex-direction: column;
-          margin-right: 0;
-          margin-left: 0rem;//←ここを調整して真ん中表示させた
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          padding: 0;
-          width:100%;
-        }
-        & > a {
-            width:27rem;
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            height: auto; // 高さを中身に合わせる
-            text-decoration: none; // 装飾を消したければ
-            @include sp {
-                width: 100%;
-                max-width: 33.5rem;
-                aspect-ratio: 33.5, 200;
-                object-fit: cover; 
-                align-items: center;
-            }
-        }
-        &:first-child {
-            margin-left:0;
-        }
-        &:last-child {
-            margin-right:0;
-        }
-        .test-slick__item__txt-title {
-          width: 100%;
-          font-size: 2.2rem;
-          font-weight: 700;
-          margin-top: 1.6rem;
-        
-          @include sp {
-            margin-top: 2.7rem;
-            margin-left: 0.2rem;
-          }
-        }
-        .test-slick__item__txt {
           display: block;
           width: 100%;
-          font-size: 1.8rem;
-          line-height: calc(30 / 18);
-          margin-top: 1rem;
-          text-align: left;
-          letter-spacing: -0.2px;
-          padding: 0 0;
+          flex-wrap: wrap;
+        }
+    }
+      
+    .test-slick__item {
+        width: 27rem;
+        flex-shrink: 0;
+        // margin-right: 3.5rem; // デフォルトはgap
+        display: flex;
+        justify-content: center;
+        @include sp {
+            width: 33.5rem;
+        }
+        
+        // 最後のスライドだけ右marginなし
+        .slick-slide.slick-active:nth-child(3) {
+          margin-right:0;
+        }
+        // 最後のアイテムには余白なし
+        &:nth-child(1n) {
+          margin-left: 0;
+        }
+        &:nth-child(3n) {
+            margin-right: 0;
+          }
+        
+      
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-decoration: none;
+          width: 27rem;
           @include sp {
-            white-space: normal;
-            align-items: flex-start;
-            // padding:0 2rem;
+            width: 33.5rem;
+          }
+      
+          .img-slick {
+            width: 27rem;
+            aspect-ratio: 270/190;
+            @include sp {
+                width: 33.5rem;
+                aspect-ratio: 335/200;
+            }
+            img {
+              width: 100%;
+              height: auto;
+              display: block;
+              object-fit: cover;
+              aspect-ratio: 270/190;
+              @include sp{
+                aspect-ratio: 335/200;
+              }
+              
+            }
+          }
+      
+          .test-slick__item__txt-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-top: 1.6rem;
+            width: 100%;
+            text-align: left;
+      
+            @include sp {
+              text-align: center;
+              margin-top: 2.4rem;
+            }
+          }
+      
+          .test-slick__item__txt {
+            font-size: 1.8rem;
+            line-height: calc(30 / 18);
+            margin-top: 1rem;
+            width: 100%;
+            text-align: left;
+            @include sp {
+              margin-top: 0.8rem;
+              
+            }
           }
         }
-        // & a {
-        //     display: block;
-        //     width: 100%;
-        //     height: 100%;
-        // }
-        
-          
-          
-    }
-    .test-slick .slick-slide {
-        margin-right: 0 !important;
-    }
-    
-    .slick-slide {
-        width:100%;
-        .img-slick {
-            width:100%;
-            margin: 0 auto;
-            @include sp {
-                width: 100%;
-                height: auto;
-                max-width: 33.5rem;
-                // aspect-ratio: 335/200;
-                margin-right: 0rem;
-            }
-            & img {
-                display:block;
-                width: 27rem;
-                height: auto;
-                margin-left:0;
-                padding-left:0;
-                @include sp {
-                    width: 100%;
-                    height: 20rem;
-                    max-width: 33.5rem;
-                    // aspect-ratio: 335/200;
-                    margin-right: 0rem;
-                }
-            }
-        }
-        .img-slick picture {
-            display: block;
-        }
-    }
-    
-    .slick-slider {
-        @include sp {
-            overflow-x: hidden;
-        }
-    }
-    
       
+        @include sp {
+          width: 100%;
+          max-width: 100%;
+          margin: 0 auto;
+        }
+    }
+    .img-slick {
+        @include sp {
+            width: 100%; 
+        }
+    } 
     //スライダー矢印
     .slick-arrow:before {
         content:""!important;
@@ -587,8 +576,13 @@
         width: 100%;
     }
 }
+
 .test-slick .slick-slide {
     margin-right: 0 !important;
+    margin-right: 3.5rem;
+    @include sp {
+        margin-right: 1.6rem;
+    }
 }
   
 .top-sec05 {
@@ -613,7 +607,7 @@
         padding-top: 12px;
         @include sp {
             width: 4.8rem;
-            padding-right: 1rem;
+            padding-right: 0rem;
             padding-left: 0rem;
         }
         span {
@@ -651,6 +645,7 @@
         @include sp {
             line-height: 1;
             margin-left: 0rem;
+            padding-left:0rem;
             // margin-left: 2.19rem;
         }
     }
@@ -703,39 +698,37 @@
             }
         } 
         span {
-                width: 2rem;
-                height: 2rem;
-                background: $color-red;
-                border-radius: 50%;
-                position: relative;
-                top: 0;
-                left: 0;
+            width: 2rem;
+            height: 2rem;
+            background: $color-red;
+            border-radius: 50%;
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-top: 0rem;
+            @include sp {
                 margin-top: 0rem;
-                // margin-right:5.3rem;
-                  @include sp {
-                    margin-top: 0rem;
-                    margin-left: 1rem; 
-                  }
-                &::before {
-                    content: '';
-                    width: 0.3rem;
-                    height: 18.8rem;
-                    background: $color-red;
-                    display: block;
-                    position: absolute;
-                    top: 50%;  
-                    left: 50%;
-                    width: 0.3rem;
-                    height: 12rem; 
-                    background-color: $color-red; 
-                    transform: translateX(-50%); 
-                    @include sp {
-                        height: 19rem;
+                margin-left: 1rem; 
+            }
+            &::before {
+                 content: '';
+                width: 0.3rem;
+                height: 18.8rem;
+                background: $color-red;
+                display: block;
+                position: absolute;
+                top: 50%;  
+                left: 50%;
+                width: 0.3rem;
+                height: 12rem; 
+                background-color: $color-red; 
+                transform: translateX(-50%); 
+                @include sp {
+                     height: 19rem;
                     
-                    }
-                   
                 }
-                
+            }   
+             
         }
         &:last-of-type {
             span::before {
@@ -765,19 +758,59 @@
             }
         }
         
+        // .arrow-2 {
+        //     position: relative;
+        //     display: inline-block;
+        //     width: 3px;
+        //     height: 46px;
+        //     margin: 0 8.4px;
+        //     border-radius: 9999px;
+        //     background-color: $color-red;
+        //     @include sp {
+        //         // margin: 0 8.4px 0 8.4px;
+        //         height: 12.3rem;
+        //         margin:0 auto;
+        //     }
+        // }
+        // .arrow-2 {
+        //     position: absolute; // ← ここ変更
+        //     top: 2.2rem; // 適宜調整（spanの下に出したい場合）
+        //     left: 50%;
+        //     transform: translateX(-50%);
+        //     display: inline-block;
+        //     width: 3px;
+        //     height: 46px;
+        //     border-radius: 9999px;
+        //     background-color: $color-red;
+        //     z-index: 1;
+          
+        //     @include sp {
+        //       height: 12.3rem;
+        //     }
+        // }
         .arrow-2 {
-            position: relative;
+            position: relative; // PC時は従来通り
             display: inline-block;
             width: 3px;
-            height: 46px;
+            height: 67px;
             margin: 0 8.4px;
             border-radius: 9999px;
             background-color: $color-red;
+          
             @include sp {
-                margin: 0 8.4px 0 8.4px;
-                height: 12.3rem;
+              position: absolute; // ← SP時だけ絶対配置
+              top: 2.4rem; // 適宜調整（span下の位置）
+              left: 50%;
+              transform: translateX(-50%);
+              height: 12.3rem;
+              margin: 0; // 中央にするため marginは0に
             }
         }
+          
+        .top-sec05__step-circle {
+            position: relative; // SP用のabsoluteの基準に
+        }
+            
           
         .arrow-2::before,
         .arrow-2::after {
@@ -786,7 +819,7 @@
             bottom: 0;
             left: calc(50% - 1.5px);
             width: 3px;
-            height: 22.2px;
+            height: 23.2px;
             border-radius: 9999px;
             background-color: $color-red;
             transform-origin: 50% calc(100% - 1.5px);
@@ -810,7 +843,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    padding-top: 5.4rem;
+    padding-top: 7.4rem;
     padding-bottom: 5.3rem;
     @include sp {
         padding-top: 3.4rem;
@@ -843,7 +876,7 @@
             font-size: 1.6rem;
             line-height: calc(30 / 16);
             padding-right: 5rem; // crossBar分のスペース
-            padding: 1.5rem 4rem 1.2rem 0rem;
+            padding: 1.5rem 5rem 1.2rem 0rem;
         }
         &:last-child {
             border-top: 0.5px solid #000000; 
@@ -888,17 +921,12 @@
                 flex:1;
             }
         }
-        .accordion:last-child .question {
-            @include sp {
-              padding-bottom: 1rem;
-            }
-        }
         .crossBar {
             width: 1.4rem;
             height: 1.4rem;
             position: absolute;
-            top: 50%;
-            right: 1.7rem;
+            top: 57%;
+            right: 3rem;
             transform: translateY(-50%);
             @include sp {
                 right: 1.5rem;
@@ -909,7 +937,7 @@
             content: "";
             display: block;
             position: absolute;
-            width: 1.6rem;
+            width: 1.3rem;
             height: 0.1rem;
             background-color: #4D4D4D;
             transition: transform 0.3s ease-in-out;
@@ -919,12 +947,12 @@
         }
         .crossBar::before {
             transform: rotate(45deg);
-            top: 0.4rem;
+            top: 0.6rem;
             left: 0;
         }
         .crossBar::after {
             transform: rotate(-45deg);
-            top: 0.4rem;
+            top: 0.6rem;
             right: 0;
         }
         &.is-open .crossBar::before {
@@ -953,11 +981,11 @@
             width: 1.4rem;
             height: 1.4rem;
             position: absolute;
-            top: 48%;
+            top: 50%;
             right: 3.1rem;
             transform: translateY(-50%);
             @include sp {
-                right: 1.7rem;
+                right: 1.6rem;
             }
         }
         .crossBar::before, .crossBar::after {
@@ -965,32 +993,32 @@
             display: block;
             position: absolute;
             width: 1rem;
-            height: 0.2rem;
+            height: 0.16rem;
             background-color: #4D4D4D;
             transition: transform 0.3s ease-in-out;
             // top: 50%;
             // left: 50%;
-            top: 0.4rem;
+            top: 0.6rem;
             // transform: translate(-50%,-50%) rotate(0deg);
         }
         .crossBar::before {
-            transform: rotate(45deg);
+            transform: rotate(53deg);
             // top: 0.4rem;
             left: 0;
         }
         .crossBar::after {
-            transform: rotate(-45deg);
-            // top: 0.4rem;
+            transform: rotate(-53deg);
+            top: 0.6rem;
             right: 0;
         }
         &.is-open .crossBar::before {
-            transform: rotate(-45deg);
-            top: -0.4rem;
+            transform: rotate(-53deg);
+            top: 0.6rem;
             
         }
         &.is-open .crossBar::after {
-            transform: rotate(45deg); /* 右側の線をハの字の角度に調整 */
-            top: -0.4rem;
+            transform: rotate(53deg); /* 右側の線をハの字の角度に調整 */
+            top: 0.6rem;
             // background: rgba(203, 0, 0, 0.1);
         }
     }
@@ -1174,7 +1202,7 @@
 }
 .top-sec06 .accordion:last-child .question {
     @include sp {
-      padding: 0.79rem 0;
+      padding: 1rem 0;
     }
 }
 
@@ -1186,7 +1214,7 @@
     justify-content: center;
     text-align: center;
     padding-top: 2rem;
-    padding-bottom: 13.4rem;
+    padding-bottom: 14.4rem;
     @include sp {
         padding-top: 0rem;
         padding-bottom: 0rem;
@@ -1291,7 +1319,7 @@
             }
             &__date {
                 @include sp {
-                    margin-bottom: 4.1rem;
+                    margin-bottom: 4.4rem;
                 }
                 p {
                     width: 100%;
@@ -1332,8 +1360,8 @@
         justify-content: flex-end;
         margin: 3.9rem 0 0rem;
         @include sp {
-            margin: 3.9rem 0;
-            margin-bottom: 13.5rem;
+            margin: 3.7rem 0;
+            margin-bottom: 13.2rem;
             justify-content: center;
         }
         a {

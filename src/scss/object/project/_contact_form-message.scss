@@ -20,7 +20,7 @@
         margin-top: 6.6rem;
         margin-bottom: 6.5rem;
         @include sp {
-          margin-top: 4.5rem;
+          margin-top: 4.6rem;
           margin-bottom: 3.5rem;
         }
         p {
@@ -47,6 +47,7 @@
         text-align: left;
         align-items: flex-start;
         margin-bottom: 0rem;
+        
       }
       
       &-checkbox {
@@ -66,11 +67,13 @@
         margin: 0;
       }
       dd {
-        margin: 0 auto;
+        display: flex;
+        // margin: 0 auto;
         font-size: 1.5rem;
         @include sp {
           margin: 0;
         }
+        
       }
       dl {
         @include sp {
@@ -89,10 +92,12 @@
     }
     .form-flex.is-last-form-flex {
       margin-bottom: 2.6rem;
+      @include sp {
+        margin-bottom: 0.4rem;
+      }
     }
     
-    dl dt,
-    content {
+    dl dt {
       width: 14rem;
       float: left;
       clear: both;
@@ -102,11 +107,16 @@
       @include sp {
         width:100%;
         font-size: 1.6rem;
-        line-height: calc(33 / 16);
+        // line-height: calc(33 / 16);
       }
       dt.purpose {
         margin-top:0.4rem;
       }
+      // dt.purpose .space {
+      //   display: inline-block;
+      //   width: 0.8rem; // ← 好きな幅に調整
+      //   height: 1px;
+      // }
       label {
         font-size: 2.0rem;
         line-height: calc(33 / 20);
@@ -142,15 +152,20 @@
     }
     .form-control {//大事
       width: 71.1rem;
-      height: 4.1rem;
+      height: 4rem;
       flex: 1;
       border: 0.5px solid #000000;
       padding: 1.8rem 2rem 1.3rem 1.9rem;
-      margin-left: 2.9rem;
+      
       @include sp {
         width: 100%;
         margin-left:0;
-        margin-bottom: 1.4rem;
+        margin-bottom: 1.5rem;
+        padding: 0 1.5rem;
+        line-height: 4rem;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
       }
     }
     .form-control__content {//大事
@@ -180,6 +195,11 @@
       align-items: center;
       margin-left: 2.9rem;
       margin-bottom: 1.2rem;
+      @include sp {
+        padding-left: 2.8rem;
+        margin-left: 0rem;
+        margin-bottom: 1.5rem;
+      }
       input[type="checkbox"] {
         position: absolute;
         left: 0;
@@ -190,6 +210,11 @@
         opacity: 0;
         z-index: 2;
         cursor: pointer;
+        @include sp {
+          margin-left: 0rem;
+          padding-left: 0;
+          align-items: center;
+        }
       }
     
       &::before {
@@ -203,7 +228,11 @@
         background: #fff;
         border: 0.5px solid #000000;
       }
-    
+      span {
+        @include sp {
+            font-size: 1.6rem;
+        }
+      }
       span::after {
         content: '';
         position: absolute;
@@ -226,5 +255,10 @@
     .checkbox01 input[type="checkbox"]:checked + span::after {
       opacity: 1;
     }
+    // .checkbox__item.is-last {
+    //   @include sp {
+    //     margin-bottom: 1.3rem; // SP用調整
+    //   }
+    // }
     
 }

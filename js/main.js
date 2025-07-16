@@ -31,6 +31,8 @@ $(function() {
   //   const aboutPos = $('.scroll-trigger').offset().top
   //  }
   // })
+
+  
   $(window).scroll(function() {
     const triggerElement = $('.scroll-trigger');
     if (triggerElement.length) { // 要素があるかチェック
@@ -50,34 +52,19 @@ $(function() {
         $('.top-back-btn__icon').removeClass('active');
       }
     }
+    
+  });
+  $('#gotop').click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 500);
   });
   
-
-  //音楽スクールスライダー
-  // $(function () {
-  //   $(".test-slick").slick({
-  //       autoplay: true, 
-  //       slidesToShow: 3,
-  //       arrows: true,
-  //       responsive: [
-  //         {
-  //             breakpoint: 768,
-  //             settings: {
-  //                 slidesToShow: 1, 
-  //                 centerMode: true,
-  //                 centerPadding: "0px"
-  //             }
-  //         }
-  //       ]
-  //   });
-  // });
-
   $(function () {
     $(".test-slick").slick({
         autoplay: true,
         // dots: true,
         centerMode: false,
         slidesToShow: 3,
+        infinite: false, 
         responsive: [
             {
             breakpoint: 768,
@@ -90,7 +77,7 @@ $(function() {
                 settings: {
                     arrows: false,
                     slidesToShow: 1,
-                    centerPadding: "10%",
+                    centerPadding: "16%",
                 },
             },
             {
@@ -115,40 +102,30 @@ $(function() {
   });
   
   //アコーディオン
-  document.querySelectorAll('.question').forEach(question => {
-    question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+  document.querySelectorAll('.accordion').forEach(accordion => {
+    accordion.addEventListener('click', () => {
+      const question = accordion.querySelector('.question');
+      const answer = accordion.querySelector('.answer');
+  
+      const isOpen = answer.classList.contains('is-open');
+  
+      // すべて閉じる
+      document.querySelectorAll('.answer').forEach(ans => {
+        ans.classList.remove('is-open');
+        ans.style.display = "none";
+      });
+      document.querySelectorAll('.question').forEach(q => {
+        q.classList.remove('is-open');
+      });
+  
+      // 開いていなければ開く
+      if (!isOpen) {
+        answer.classList.add('is-open');
+        answer.style.display = "flex";
+        question.classList.add('is-open');
+      }
     });
   });
-  //is-openクラス付与/削除
-  document.querySelectorAll('.question').forEach(question => {
-    question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const crossBar = question.querySelector('.crossBar');
-
-        if (answer.classList.contains('is-open')) {
-            answer.classList.remove('is-open');
-            answer.style.display = "none"; // 回答を非表示
-            question.classList.remove('is-open'); // 矢印を戻す
-        } else {
-            // すべての回答を閉じる
-            document.querySelectorAll('.answer').forEach(ans => {
-                ans.classList.remove('is-open');
-                ans.style.display = "none";
-            });
-
-            // すべての質問の is-open クラスを削除（矢印をリセット）
-            document.querySelectorAll('.question').forEach(q => {
-                q.classList.remove('is-open');
-            });
-
-            // クリックされた質問のみ開く
-            answer.classList.add('is-open');
-            answer.style.display = "flex"; // 回答を表示
-            question.classList.add('is-open'); // 矢印を変更
-        }
-    });
 });
 
 
@@ -189,8 +166,8 @@ function createPagination(currentPage, totalPages) {
       }
       pagination.appendChild(li);
   });
- }
-});
+}
+
 
 //スムーススクロール
 $('a[href^="#"]').click(function(){

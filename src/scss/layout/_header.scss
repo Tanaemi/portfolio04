@@ -276,7 +276,6 @@
             // opacity:0.8;
           }
         }
-        
       }
     }
     //changeクラスがついた場合
@@ -317,6 +316,14 @@
       }
     }
 }
+
+.header__nav ul li a:hover {
+  background-color: #000;
+  color: $color-main;
+}
+
+
+
 .header__nav a:hover {
   opacity: 0.4;
 }
