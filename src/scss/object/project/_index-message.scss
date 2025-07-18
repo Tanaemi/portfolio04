@@ -424,6 +424,7 @@
         width: 100%;
         max-width: 88rem;
         margin: 0 auto;
+        margin: 0 -15px;
         // gap は使わない！
         @include sp {
           display: block;
@@ -431,17 +432,16 @@
           flex-wrap: wrap;
         }
     }
-      
     .test-slick__item {
         width: 27rem;
         flex-shrink: 0;
         // margin-right: 3.5rem; // デフォルトはgap
         display: flex;
         justify-content: center;
+        margin: 0 15px;
         @include sp {
             width: 33.5rem;
         }
-        
         // 最後のスライドだけ右marginなし
         .slick-slide.slick-active:nth-child(3) {
           margin-right:0;
