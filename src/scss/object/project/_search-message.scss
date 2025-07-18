@@ -4,7 +4,7 @@
 .search {
     width: 100%;
     height: auto;
-    padding-bottom: 20.9rem;
+    padding-bottom: 14.9rem;
     padding-top: 6.7rem;
     
     @include sp {
@@ -48,11 +48,12 @@
     .blog__items {
         width: 100%;
         display: flex;
+        margin-bottom: 7rem;
         .blog__item {
             display: flex;
             margin:0 auto;
             column-gap: 5.1rem;
-            margin-bottom: 7rem;
+            
             @include sp {
                 flex-direction: column;
                 column-gap: 0rem;
@@ -72,7 +73,7 @@
                     height: auto;
                     aspect-ratio: 335 / 200;
                     overflow: hidden;
-                    margin-bottom: 3.1rem;
+                    margin-bottom: 3.4rem;
                 }
                 img {
                     width: 100%;
@@ -119,7 +120,7 @@
                     align-items: flex-start;
                     @include sp {
                         margin-top: 0rem;
-                        margin-bottom: 0.6rem;
+                        margin-bottom: 1.4rem;
                     }
                     
                 }
@@ -155,7 +156,14 @@
                 }
             }
         }
+        
     } 
+    .blog__items-wrap {
+        margin-bottom: 7rem;
+        &:last-child {
+            margin-bottom: 6rem;
+        }
+    }
     
     //ページネーション
     .pagination {
@@ -168,7 +176,7 @@
         // margin-bottom: 6.8rem;
         @include sp {
             padding-top: 2rem;
-            padding-bottom: 20rem;
+            padding-bottom: 14rem;//searchページ合
         }
     }
     .pagination li {
