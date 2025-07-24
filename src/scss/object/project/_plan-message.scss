@@ -11,7 +11,7 @@
     text-align: center;
     @include sp {
         padding-top: 3.5rem;
-        padding-bottom: 4rem;
+        padding-bottom: 3rem;
     }
     &__title_a {
         margin-bottom: 2.8rem;
@@ -29,7 +29,7 @@
             place-content: center;
             margin-bottom: 0rem;
             @include sp {
-                margin-bottom: 3.3rem;
+                margin-bottom: 3rem;
 
             }
         }
@@ -79,7 +79,7 @@
             @include sp {
                 font-size: 1.6rem;
                 line-height: calc(30 / 16);
-                margin-top:4.4rem;
+                margin-top:4.6rem;
             }
             
         }
@@ -96,7 +96,7 @@
     text-align: center;
     @include sp {
         padding-top: 0rem;
-        margin-bottom: 18.4rem; 
+        margin-bottom: 5.9rem; 
         margin-left: 0.2rem;
     }
     &__title {
@@ -134,11 +134,10 @@
             border-collapse: collapse;
             font-size: 1.7rem;
             @include sp {
-                width: 16.75rem !important;
-                padding-right: 0;
-                padding-top: 0.5rem;
+                width: 16.7rem !important;
+                padding: 0;
                 // padding-left: 1.6rem;
-                margin-left: 0.4rem;
+                // margin-left: 0.4rem;
             }
             span {
                 display: inline-block;
@@ -164,7 +163,7 @@
                 text-align: left !important;
                 padding-left: 2rem;
                 @include sp {
-                    padding-left: 1rem;
+                    padding-left: 0.9rem;
                 }
             }
             &.blank {
@@ -180,7 +179,7 @@
                  transform: translate(-50%, -50%); // 中央に配置
                  border-radius: 0rem; // 少しだけ角を丸めてもOK（任意）
                  @include sp {
-                    width: 2.4rem;       // スマホ時にやや短く調整
+                    width: 3rem;       // スマホ時にやや短く調整
                   }
     
                 }
@@ -207,6 +206,7 @@
             font-size: 2rem;
             font-weight: 700;
             @include sp {
+                font-size: 2rem;
                 width: 16.75rem;
             }
             &:first-of-type {
@@ -314,21 +314,23 @@
         }
     }
     
-    .text {
+    .table-text {
         margin-top: 2.85rem;
+        margin-bottom: 4rem;
+        @include sp {
+            margin-bottom: 6.7rem;
+        }
         p {
             font-size: 1.7rem;
             line-height: calc(25 / 17);
             color: #000000;
             text-align: left;
             @include sp {
-                margin-bottom: 6.7rem;
                 font-size: 1.6rem;
                 line-height: calc(30 / 16);
             }
         }
     }
-    
 }
 
 //スクロールバー

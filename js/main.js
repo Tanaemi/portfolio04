@@ -51,8 +51,13 @@ $(function() {
       } else {
         $('.top-back-btn__icon').removeClass('active');
       }
+      // お問い合せボタン
+      if (scrollTop > 100) {
+        $('.contact-button').addClass('active');
+      } else {
+        $('.contact-button').removeClass('active');
+      }
     }
-    
   });
   $('#gotop').click(function () {
     $('html, body').animate({ scrollTop: 0 }, 500);
