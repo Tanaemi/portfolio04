@@ -77,12 +77,12 @@ img {
 
 .inner {
   max-width: 92rem;
-  margin: 0 auto;
-  padding: 0 2rem;
+  margin-inline: auto;
+  padding-inline: 2rem;
   box-sizing: border-box;
   @include sp {
     max-width:37.5rem;
-    padding: 0 2rem;
+    // padding: 0 2rem;
   }
   &_blog_detail {
     max-width: 88rem;
@@ -152,9 +152,9 @@ img {
       align-items: center;
     }
   }
-  &.plan {
-    padding: 0 1.7rem;
-  } 
+  // &.plan {
+  //   padding: 0 1.7rem;
+  // } 
 }
 
 $red : #dc143c;
