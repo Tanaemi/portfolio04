@@ -1,2 +1,55 @@
 @use '../../foundation/variable' as *;
 @use '../../foundation/mixin' as *;
+
+.c-fv_wrap {
+    width: 100%;
+    padding-top: 280px;
+    margin: 0 auto;
+    background-image: url("../img/f404-pc.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    @include sp {
+       width: 100%;
+       height: 300px;
+       margin-top: 50px;
+       background-image: url("../img/f404-min.jpg");
+    }
+  }
+  .c-fv_box {
+    width: 100%;
+    padding-bottom: 280px;
+    background-color: rgba(80, 80, 80, 0.49);
+    // background-color: #2f820c;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    place-items: center;
+    mix-blend-mode: multiply;
+    @include sp {
+       padding-bottom: 300px;
+    }
+  }
+  .c-fv_text {
+    width: 100%;
+    height: 100%;
+    padding-top:80px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    place-items: center;
+    @include sp {
+       padding-top: 0px;
+    }
+    h3 {
+       font-size: 25px;
+       font-weight: 700;
+       color: $color-main;
+       margin: 0 auto;
+       @include sp {
+          padding-top: 6px;
+       }
+    }
+  }
