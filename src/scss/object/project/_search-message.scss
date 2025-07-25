@@ -37,10 +37,7 @@
             span {
                 font-weight: 700;
             }
-
         }
-        
-        
     }
     .inner {
         padding: 0 2rem;
@@ -49,6 +46,9 @@
         width: 100%;
         display: flex;
         margin-bottom: 7rem;
+        &:last-of-type {
+            margin-bottom: 6rem;
+        }
         .blog__item {
             display: flex;
             margin:0 auto;
@@ -63,16 +63,16 @@
                 width: 26rem;
                 height: auto;
                 aspect-ratio: 260 / 184; /* 比率を維持 */
-                overflow: hidden; /* はみ出た部分をカット */
+                // overflow: hidden; /* はみ出た部分をカット */
                 position: relative;
                 top: 0;
                 left: 0;
-                overflow: visible;
+                // overflow: visible;
                 @include sp {
                     width: 33.5rem !important;
                     height: auto;
                     aspect-ratio: 335 / 200;
-                    overflow: hidden;
+                    // overflow: hidden;
                     margin-bottom: 3.4rem;
                 }
                 img {
@@ -160,7 +160,7 @@
     } 
     .blog__items-wrap {
         margin-bottom: 7rem;
-        &:last-child {
+        &:last-of-type {
             margin-bottom: 6rem;
         }
     }

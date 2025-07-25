@@ -1,58 +1,55 @@
 @use '../../foundation/variable' as *;
 @use '../../foundation/mixin' as *;
 
-
-.c-fv {
-    width: 100%;
-    height: auto;
-    position: relative;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 8rem;
-    @include sp {
-       padding-top: 5rem;
-    }
-    &::before {
-       content: ''; 
-       position: absolute;
-       top: 0;
-       left: 0;
-       width: 100%;
-       height: 100%;
-       background: rgba(80, 80, 80, 0.49);
-       z-index: 1; // 画像の上に表示
-     }
-    &__contents {
-       width: 100%;
-       height: 100%;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       text-align: center; 
-       padding-top: vw(24, 1080);
-       padding-left: vw(15, 1080); 
-       background: #00000026; 
-       z-index:2;
-       @include sp {
-          padding-top: 0;
-          padding-left: 0;
-       }
-       h3 {
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%); 
-         font-size: vw(25, 1080);
-         line-height: calc(60 / 25);
-         font-weight: 700;
-         letter-spacing: 0;
-         color: $color-main;
-         align-items: center;
-       }
-    }
-  }
+.c-fv_wrap {
+   width: 100%;
+   padding-top: 280px;
+   margin: 0 auto;
+   background-image: url("../img/contact-pc.jpg");
+   background-position: center;
+   background-size: cover;
+   position: relative;
+   @include sp {
+      width: 100%;
+      height: 300px;
+      margin-top: 50px;
+      background-image: url("../img/contact-sp.jpg");
+   }
+ }
+ .c-fv_box {
+   width: 100%;
+   padding-bottom: 280px;
+   background-color: rgba(80, 80, 80, 0.49);
+   // background-color: #2f820c;
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   display: flex;
+   place-items: center;
+   mix-blend-mode: multiply;
+   @include sp {
+      padding-bottom: 300px;
+   }
+ }
+ .c-fv_text {
+   width: 100%;
+   height: 100%;
+   padding-top:80px;
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   display: flex;
+   place-items: center;
+   @include sp {
+      padding-top: 0px;
+   }
+   h3 {
+      font-size: 25px;
+      font-weight: 700;
+      color: $color-main;
+      margin: 0 auto;
+      @include sp {
+         padding-top: 6px;
+      }
+   }
+ }
