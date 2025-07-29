@@ -63,40 +63,25 @@ $(function() {
     $('html, body').animate({ scrollTop: 0 }, 500);
   });
   
-  $(function () {
-    $(".test-slick").slick({
-        autoplay: true,
-        // dots: true,
-        centerMode: false,
-        slidesToShow: 3,
-        infinite: false, 
-        responsive: [
-            {
-            breakpoint: 768,
-                settings: {
-                    slidesToShow: 2,
-                },
-            },
-            {
-            breakpoint: 640,
-                settings: {
-                    arrows: false,
-                    slidesToShow: 1,
-                    centerPadding: "16%",
-                },
-            },
-            {
-            breakpoint: 375,
-                settings: {
-                    arrows: false,
-                    slidesToShow: 1,
-                    centerMode: false,
-                },
-            },
-        ],
-    });
+  //slickスライダー
+$(function () {
+  $(".slider").slick({
+    arrows: true,
+    autoplay: true,
+    adaptiveHeight: true,
+    dots: false,
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 768,  // ←スマホサイズ
+        settings: {
+          slidesToShow: 1, // ←1枚表示に切り替え
+        },
+      },
+    ],
   });
-    
+});
+ 
   
   //AOS
   AOS.init({

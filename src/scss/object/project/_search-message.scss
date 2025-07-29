@@ -108,7 +108,7 @@
                 // width: 68.7%;
                 text-align: left;
                 @include sp {
-                    margin-bottom: 3.5rem;
+                    margin-bottom: -2.5rem;
                 }
                 
                 &-title {
@@ -160,6 +160,9 @@
     } 
     .blog__items-wrap {
         margin-bottom: 7rem;
+        @include sp {
+            margin-bottom: 0rem;
+        }
         &:last-of-type {
             margin-bottom: 6rem;
         }

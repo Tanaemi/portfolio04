@@ -207,7 +207,6 @@
       padding-top: 0.3rem;
     }
 }
-  
 
 .top-sec02 {
     width: 100%;
@@ -265,7 +264,7 @@
     justify-content: center;
     text-align: center;
     padding-top: 6.1rem;
-    margin-bottom: 2.4rem;
+    padding-bottom: 4.4rem;
     
     @include sp {
         margin: 0 0;
@@ -355,7 +354,7 @@
             }
             p {
                 font-size: 1.8rem;
-                margin-top: 3.8rem;
+                margin-top: 3.6rem;
                 justify-content: flex-start;
                 padding-left:5rem;
                 line-height: calc(33 / 18);
@@ -398,130 +397,85 @@
     height: auto;
     background: $color-red;
     color: #fff;
-    padding-top: 6.3rem;
-    padding-bottom: 5.7rem;
+    padding-top: 4.4rem;
+    padding-bottom: 8rem;
     @include sp {
         padding-top: 4.6rem;
-        padding-bottom: 5.4rem;
-
+        padding-bottom: 0rem;
     }
     .inner {
         margin-top: 0;
     }
-
-   /*スライダー*/
-    .top-sec04-wrap {
-        width: 100%;
-        max-width: 88rem;
-        margin: 0 auto;
-        @include sp {
-            max-width: 100%;
-        }
+    /*スライダー*/
+    .slick-track {
+       display: flex;
     }
-    .test-slick {
-        // display: flex;
-        // flex-wrap: nowrap;
-        width: 100%;
-        max-width: 88rem;
-        margin: 0 auto;
-        margin: 0 -15px;
-        // gap は使わない！
-        @include sp {
-          display: block;
-          width: 100%;
-          flex-wrap: wrap;
-        }
+    .slick-slide {
+       height: auto !important;
     }
-    .test-slick__item {
-        width: 27rem;
-        flex-shrink: 0;
-        // margin-right: 3.5rem; // デフォルトはgap
-        display: flex;
-        justify-content: center;
-        margin: 0 15px;
+    .slider {
+        margin: 0 auto;
+        max-width: 920px;
+        width: 100%;
+        background-color: $color-red;
+        position:relative;
+    }
+    .slider-img {
+        box-sizing: border-box;
+    }
+    .picture {
+        display: block;
+    }
+    .slider-img img {
+        height: auto;
+        width: 100%;
+        padding: 0 17.5px;
+        box-sizing: border-box;
         @include sp {
-            width: 33.5rem;
+            // margin-left: 17.5px;
+            padding: 0;
         }
-        // 最後のスライドだけ右marginなし
-        .slick-slide.slick-active:nth-child(3) {
-          margin-right:0;
-        }
-        // 最後のアイテムには余白なし
-        &:nth-child(1n) {
-          margin-left: 0;
-        }
-        &:nth-child(3n) {
-            margin-right: 0;
-          }
         
-      
-        a {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-decoration: none;
-          width: 27rem;
-          @include sp {
-            width: 33.5rem;
-          }
-      
-          .img-slick {
-            width: 27rem;
-            aspect-ratio: 270/190;
-            @include sp {
-                width: 33.5rem;
-                aspect-ratio: 335/200;
-            }
-            img {
-              width: 100%;
-              height: auto;
-              display: block;
-              object-fit: cover;
-              aspect-ratio: 270/190;
-              @include sp{
-                aspect-ratio: 335/200;
-              }
-              
-            }
-          }
-      
-          .test-slick__item__txt-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-top: 1.6rem;
-            width: 100%;
-            text-align: left;
-      
-            @include sp {
-              text-align: center;
-              margin-top: 2.4rem;
-            }
-          }
-      
-          .test-slick__item__txt {
-            font-size: 1.8rem;
-            line-height: calc(30 / 18);
-            margin-top: 1rem;
-            width: 100%;
-            text-align: left;
-            @include sp {
-              margin-top: 0.8rem;
-              
-            }
-          }
-        }
-      
-        @include sp {
-          width: 100%;
-          max-width: 100%;
+    }
+    .voice-img {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+      }
+      @media screen and (max-width: 768px) {
+        .voice-img {
+          max-width: 335px;
+          aspect-ratio: 335/200;
           margin: 0 auto;
         }
     }
-    .img-slick {
+      
+    .slider-img p.name {
+        margin-top: 0.7em;
+        line-height: 1.5;
+        color: #ffffff;
+        padding: 0 17.5px;
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: calc(33 / 22);
+        display:flex;
+        justify-content: center;
         @include sp {
-            width: 100%; 
+            margin-top: 1.1em;
         }
-    } 
+        
+    }
+    .slider-img p.comment {
+        margin-top: 0.5em;
+        line-height: 1.5;
+        color: #ffffff;
+        padding: 0 17.5px;
+        font-size: 1.8rem;
+        // font-weight: 700;
+        line-height: calc(30 / 18);
+        display:flex;
+        justify-content: center;
+    }
     //スライダー矢印
     .slick-arrow:before {
         content:""!important;
@@ -545,11 +499,11 @@
         background: url(../img/arrow-r.png)!important;
         background-size: contain!important;
         position: absolute;
-        top: -4.7rem;
-        left: 1rem; //←
+        top: -3.7rem;
+        left: -1rem; //←
         @include sp {
-            top: -3.8rem;
-            left: -4.8rem;
+            top: 17.2rem;
+            left: 3.2rem;
         }
     }
     .slick-prev:before {
@@ -558,33 +512,24 @@
         background-size: contain!important;
         position: absolute;
         top: -3.2rem;
-        left: -2rem;
+        left: 0rem;
         @include sp {
-            top: -3.8rem;
-            left: 4.8rem;
-            
+            top: 17.2rem;
+            left: -3.2rem;
         }
     }
     .slick-arrow{
         z-index:10;
         width:2rem;
         height:2.727rem;
-        display: none;
-    }
-    .test-container {
-        overflow-x: hidden;
-        width: 100%;
+        display: block;
+        @include sp {
+            top: -3.8rem;
+            left: 4.8rem;
+        }
     }
 }
 
-.test-slick .slick-slide {
-    margin-right: 0 !important;
-    margin-right: 3.5rem;
-    @include sp {
-        margin-right: 1.6rem;
-    }
-}
-  
 .top-sec05 {
     width:100%;
     display: flex;
@@ -758,36 +703,6 @@
             }
         }
         
-        // .arrow-2 {
-        //     position: relative;
-        //     display: inline-block;
-        //     width: 3px;
-        //     height: 46px;
-        //     margin: 0 8.4px;
-        //     border-radius: 9999px;
-        //     background-color: $color-red;
-        //     @include sp {
-        //         // margin: 0 8.4px 0 8.4px;
-        //         height: 12.3rem;
-        //         margin:0 auto;
-        //     }
-        // }
-        // .arrow-2 {
-        //     position: absolute; // ← ここ変更
-        //     top: 2.2rem; // 適宜調整（spanの下に出したい場合）
-        //     left: 50%;
-        //     transform: translateX(-50%);
-        //     display: inline-block;
-        //     width: 3px;
-        //     height: 46px;
-        //     border-radius: 9999px;
-        //     background-color: $color-red;
-        //     z-index: 1;
-          
-        //     @include sp {
-        //       height: 12.3rem;
-        //     }
-        // }
         .arrow-2 {
             position: relative; // PC時は従来通り
             display: inline-block;
@@ -834,7 +749,6 @@
         }
     }           
 }
-
 
 .top-sec06 {
     width: 100%;
