@@ -20,7 +20,7 @@
       width: 100%;
       height: auto;
       display: flex;
-      column-gap: 3.4rem;
+      // column-gap: 3.4rem;
       justify-content: center;
       @include sp {
         align-items: center;
@@ -33,26 +33,31 @@
         list-style: none;
         background: $color-red;
         text-decoration: none;
+        column-gap: 3.8rem;
         @include sp {
           flex-direction: row;
+          column-gap: 3rem;
         }
 
         li {
+          flex-wrap: nowrap;
             a {
               list-style: none;
               display: inline-block;
               align-items: center;
-              font-size: 1.7rem;
+              // font-size: 1.7rem;
+              font-size: clamp(1.5rem, 1.4vw, 1.7rem); 
               font-weight: 700;
               position:relative;
               transition: all 0.3s;
               text-decoration: none;
               color: $color-main;
               flex: 1;
-              margin-right: 3.2rem;
+              // margin-right: 3.2rem;
               transition: 0.3s ease-in-out;
+              
               @include sp {
-                margin-right: 2.99rem;
+                // margin-right: 2.99rem;
               }
               &::before {
                 content: '';
@@ -77,20 +82,14 @@
                   background: #000;
                   color: #FFF;
                 }
-              //   &::before {
-              //     transform: scaleX(1);
-              //   }
               }
-            
-            
             &:last-child a {
               margin-right: 0rem;
             }
             &:first-child a {
               margin-left: 5rem;
               @include sp {
-                margin-left: 4.2rem;
-                
+                margin-left: 4rem;
               }
             }
         }
@@ -105,12 +104,13 @@
         li {
           &:first-child a {
             @include sp {
-              margin-left: 3.4rem;
+            //   margin-left: 3.4rem;
+            // }
             }
           }
         }
-      }
-    }
+      } 
+    } 
     &__logo {
       width:100%;
       display: flex;
@@ -142,7 +142,7 @@
       text-align: center;
       p {
         font-size: 1.5rem;
-        line-height: calc(33 / 15);
+        line-height: 2.4;
         @include sp {
           font-size: 1.5rem;
           line-height: calc(20 / 15);
@@ -163,7 +163,7 @@
           column-gap: 1rem;
           list-style: none;
           text-align: center;
-          padding-left: 0;
+          padding-top: 0.4rem;
           send {
             margin-top: 2.4rem;
             @include sp {
@@ -194,12 +194,12 @@
       }
     } 
     
-    .inner {
-      @include sp {
-        padding: 0 2rem;
-      }
-    } 
-
+    // .inner {
+    //   @include sp {
+    //     padding: 0 2rem;
+    //   }
+    // } 
+  
 } 
 .footer__sns svg {
   width: 2.23rem;

@@ -82,7 +82,11 @@ img {
   box-sizing: border-box;
   @include sp {
     max-width:37.5rem;
-    // padding: 0 2rem;
+  }
+  &-top-sec04 {
+    max-width: 95rem;
+    margin: 0 auto;
+
   }
   &_blog_detail {
     max-width: 88rem;
@@ -91,7 +95,7 @@ img {
     max-width: 92rem;
     margin: 0 auto;
     @include sp {
-      max-width:37.5rem;
+      max-width: 37.5rem;
       padding: 1.1rem 1.6rem 0rem 2rem;
     }
   }
@@ -152,9 +156,6 @@ img {
       align-items: center;
     }
   }
-  // &.plan {
-  //   padding: 0 1.7rem;
-  // } 
 }
 
 $red : #dc143c;
